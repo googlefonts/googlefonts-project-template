@@ -1,0 +1,44 @@
+// Type Design Boilerplate V0.1
+// https://github.com/raphaelbastide/typedesignboilerplate
+{
+    "typeface": {
+        "name": "Demo",
+        "authors": [
+            "John Doe",
+            "Long Cat"
+        ],
+        "foundry": "TheTypeHouse",
+        "licence": "OFL",
+        "unicode-ranges": "Basic Latin",
+        "tags": [
+            "sans-serif",
+            "pixel",
+            "grotesque",
+            "decorative"
+        ],
+        "repository-URL": "https://github.com/user/Demo",
+        "project-URL": "https://website.com/demofontproject",
+        "download-URL": "https://website.com/demofontproject/demo.zip",
+        "softwares": [
+            "Inkscape",
+            "Fontforge"
+        ],
+        "similar-fonts": [
+            "Helvetica",
+            "Neue Haas Grotesk"
+        ],
+        "sample-text": "The quick brown fox jumps over the lazy dog",
+        "font": {
+            "name": "Demo regular",
+            "weight": "book",
+            "variant": "normal",
+            "creation-date": "2012"
+        },
+        "font": {
+            "name": "Demo italic",
+            "weight": "book",
+            "variant": "italic",
+            "creation-date": "2012"
+        }
+    }
+}
