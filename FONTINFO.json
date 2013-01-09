@@ -3,6 +3,7 @@
 {
     "typeface": {
         "name": "Demo",
+        "version":"1.0",
         "authors": [
             "John Doe",
             "Long Cat"
@@ -14,6 +15,7 @@
             "sans-serif",
             "pixel",
             "grotesque",
+            "incomplete",
             "decorative"
         ],
         "repository-URL": "https://github.com/user/Demo",
@@ -30,13 +32,13 @@
         "sample-text": "The quick brown fox jumps over the lazy dog",
         "font": {
             "name": "Demo regular",
-            "weight": "book",
-            "variant": "normal",
+            "weight": "normal",
+            "variant": "regular",
             "creation-date": "2012"
         },
         "font": {
             "name": "Demo italic",
-            "weight": "book",
+            "weight": "normal",
             "variant": "italic",
             "creation-date": "2012"
         }
