@@ -4,7 +4,7 @@ Short description of Thefont
 
 ## Specimen
 
-![Specimen 1](documentation/images/specimen.png)
+![Demo-Italic-v1.001-specimen-001](https://raw.github.com/davelab6/Unified-Typeface-Design/master/documentation/images/Demo-Italic-v1.001-specimen-001.png)
 
 ## License
 Thefont is under [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL "SIL Open Font License")
