@@ -13,10 +13,6 @@ include references to how changes can be contributed back to the Original
 Version. You may also wish to include a short guide to the design, or a
 reference to such a document.) 
 
-Foo currently provides the following Unicode coverage:
-Basic Latin: 93/128 (72.66%)
-Latin-1 Supplement: 2/128 (1.56%)
-
 Security and Integrity
 -------------------------
 
