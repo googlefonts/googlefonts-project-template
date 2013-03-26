@@ -69,11 +69,10 @@ ChangeLog
 
 Acknowledgements
 -------------------------
-(Here is where contributors can be acknowledged. 
 
-If you make modifications be sure to add your name (N), email (E), web-address
-(W) and description (D). This list is sorted by last name in alphabetical
-order.)
+When you make modifications, be sure to add your name (N), email (E),
+web-address (W) and description (D). This list is sorted by last name in
+alphabetical order.
 
 N: Jane Doe
 E: jane@university.edu
