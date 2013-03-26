@@ -48,27 +48,27 @@ http://openfontlibrary.org/projects/foo-font
 ChangeLog
 ----------
 
-7 February 2007 (Pat Johnson) <NewFontFamilyName> Version 1.3
 When you make modifications, be sure to add a description of your changes,
 following the format of the other entries, to the start of this section.
+
+7 February 2007 (Pat Johnson) Demo, v1.001
 - Added Greek and Cyrillic glyphs
-- Released as "<NewFontFamilyName>"
+- Changed name to "Demo"
 
-7 March 2006 (Fred Foobar) <NewFontFamilyName> Version 1.2
+7 March 2006 (Fred Foobar) Bar v1.1
 - Tweaked contextual behaviours
-- Released as "<NewFontFamilyName>"
 
-1 Feb 2005 (Jane Doe) <NewFontFamilyName> Version 1.1
+1 Feb 2005 (Jane Doe) Bar v1.0
 - Improved build script performance and verbosity
 - Extended the smart code documentation
 - Corrected minor typos in the documentation
 - Fixed position of combining inverted breve below (U+032F)
 - Added OpenType/Graphite smart code for Armenian
 - Added Armenian glyphs (U+0531 -> U+0587) 
-- Released as "<NewFontFamilyName>"
+- Changed name to "Bar"
 
-1 Jan 2005 (Joe Smith) <FontFamilyName> Version 1.0
-- Initial release of font "<FontFamilyName>"
+1 Jan 2005 (Joe Smith) Foo v1.0
+- Initial release of font "Foo"
 
 
 Acknowledgements
