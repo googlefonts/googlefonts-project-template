@@ -103,4 +103,7 @@ E: joe@fontstudio.org
 W: http://joe.fontstudio.org
 D: Designer - original Roman glyphs
 
-(Original authors can also include information here about their organization.)
+University Arts Dept is a research-based department specializing in 
+typography, and offers courses in typeface design and book design.
+
+FontStudio is a foundry based in New York City, USA.
