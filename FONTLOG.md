@@ -1,4 +1,4 @@
-FONTLOG for Foo
+FONTLOG for Demo
 -------------------
 This file provides detailed information on the Foo font software.
 This information should be distributed along with the Foo fonts
