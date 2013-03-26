@@ -1,6 +1,6 @@
 # Myfont
 
-Short description of Thefont
+Short description of Demo
 
 ## Specimen
 
