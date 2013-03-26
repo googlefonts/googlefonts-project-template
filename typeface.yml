@@ -9,9 +9,9 @@ typeface family:
   - grotesque
   - incomplete
   - decorative
-  softwares:
   repository url: https://github.com/user/Demo
   project url: https://website.com/demofontproject
+  software:
   - Inkscape
   - Fontforge
   similar-fonts:
