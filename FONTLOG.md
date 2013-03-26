@@ -17,13 +17,15 @@ Security and Integrity
 -------------------------
 
 The following signatures are valid for the source files and the final pdf:
-SHA256: ...
+
+SHA256: TODO
 
 As you can see in the corresponding SHA256sum.txt file.
 
-You can check that the orginator of the signature is actually who he said he is by using the following GPG public key:
-<key>
+You can check that the originator of the signature is actually who he said he
+is by using the following GPG public key:
 
+TODO
 
 
 Information for Contributors
