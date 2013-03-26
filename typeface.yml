@@ -9,10 +9,10 @@ typeface family:
   - grotesque
   - incomplete
   - decorative
-  repository-URL: https://github.com/user/Demo
-  project-URL: https://website.com/demofontproject
   download-URL: https://website.com/demofontproject/demo.zip
   softwares:
+  repository url: https://github.com/user/Demo
+  project url: https://website.com/demofontproject
   - Inkscape
   - Fontforge
   similar-fonts:
