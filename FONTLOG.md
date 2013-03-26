@@ -47,9 +47,10 @@ http://openfontlibrary.org/projects/foo-font
 
 ChangeLog
 ----------
-(This should list both major and minor changes, most recent first. Here are some examples:)
 
 7 February 2007 (Pat Johnson) <NewFontFamilyName> Version 1.3
+When you make modifications, be sure to add a description of your changes,
+following the format of the other entries, to the start of this section.
 - Added Greek and Cyrillic glyphs
 - Released as "<NewFontFamilyName>"
 
