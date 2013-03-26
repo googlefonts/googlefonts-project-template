@@ -14,7 +14,7 @@ typeface family:
   software:
   - Inkscape
   - Fontforge
-  similar-fonts:
+  similar fonts:
   - Helvetica
   - Neue Haas Grotesk
   sample-text: The quick brown fox jumps over the lazy dog
