@@ -1,0 +1,1 @@
+Foo is a trademark of Yoyodyne, Inc.
