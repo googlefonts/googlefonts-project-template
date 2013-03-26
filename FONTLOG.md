@@ -1,5 +1,6 @@
 FONTLOG for Demo
 -------------------
+
 This file provides detailed information on the Foo font software.
 This information should be distributed along with the Foo fonts
 and any derivative works.
@@ -7,6 +8,7 @@ and any derivative works.
 
 Basic Font Information
 --------------------------
+
 (Here is where you would describe the purpose and brief specifications for the
 font project, and where users can find more detailed documentation. It can also
 include references to how changes can be contributed back to the Original
@@ -30,13 +32,16 @@ TODO
 
 Information for Contributors
 ------------------------------
+
 Foo is released under the OFL 1.1 - http://scripts.sil.org/OFL
+
 For information on what you're allowed to change or modify, consult the
 OFL-1.1.txt and OFL-FAQ.txt files. The OFL-FAQ also gives a very general
 rationale and various recommendations regarding why you would want to
 contribute to the project or make your own version of the font.
 
 See the project website for the current trunk and the various branches:
+
 http://openfontlibrary.org/projects/foo-font
 
 
