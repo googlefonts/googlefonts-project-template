@@ -17,4 +17,4 @@ http://scripts.sil.org/OFL
 This font repository follows the Type Design Boilerplate v1.0, 
 a standard way to organize font project source files. Learn more at 
 https://github.com/raphaelbastide/Unified-Typeface-Design
->>>>>>> 46bd4ce3b47484abbbeb0dff158343e9d34fca8b
+
