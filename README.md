@@ -9,7 +9,7 @@ Short description of Thefont
 ## License
 Thefont is under [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL "SIL Open Font License")
 
-## Standard is better!
+## UTD
 
-This font repository follows the Type Design Boilerplate v1.0
-More info <a href="https://github.com/raphaelbastide/typedesignboilerplate">https://github.com/raphaelbastide/typedesignboilerplate</a>
+This font repository follows the Unified Typeface Design standard.
+More info <a href="https://github.com/raphaelbastide/Unified-Typeface-Design">https://github.com/raphaelbastide/Unified-Typeface-Design</a>
