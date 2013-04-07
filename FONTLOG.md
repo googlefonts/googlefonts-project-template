@@ -1,5 +1,6 @@
-FONTLOG for Foo
+FONTLOG for Demo
 -------------------
+
 This file provides detailed information on the Foo font software.
 This information should be distributed along with the Foo fonts
 and any derivative works.
@@ -7,73 +8,75 @@ and any derivative works.
 
 Basic Font Information
 --------------------------
+
 (Here is where you would describe the purpose and brief specifications for the
 font project, and where users can find more detailed documentation. It can also
 include references to how changes can be contributed back to the Original
 Version. You may also wish to include a short guide to the design, or a
 reference to such a document.) 
 
-Foo currently provides the following Unicode coverage:
-Basic Latin: 93/128 (72.66%)
-Latin-1 Supplement: 2/128 (1.56%)
-
 Security and Integrity
 -------------------------
 
 The following signatures are valid for the source files and the final pdf:
-SHA256: ...
+
+SHA256: TODO
 
 As you can see in the corresponding SHA256sum.txt file.
 
-You can check that the orginator of the signature is actually who he said he is by using the following GPG public key:
-<key>
+You can check that the originator of the signature is actually who he said he
+is by using the following GPG public key:
 
+TODO
 
 
 Information for Contributors
 ------------------------------
+
 Foo is released under the OFL 1.1 - http://scripts.sil.org/OFL
+
 For information on what you're allowed to change or modify, consult the
 OFL-1.1.txt and OFL-FAQ.txt files. The OFL-FAQ also gives a very general
 rationale and various recommendations regarding why you would want to
 contribute to the project or make your own version of the font.
 
 See the project website for the current trunk and the various branches:
+
 http://openfontlibrary.org/projects/foo-font
 
 
 ChangeLog
 ----------
-(This should list both major and minor changes, most recent first. Here are some examples:)
 
-7 February 2007 (Pat Johnson) <NewFontFamilyName> Version 1.3
+When you make modifications, be sure to add a description of your changes,
+following the format of the other entries, to the start of this section.
+
+7 February 2007 (Pat Johnson) Demo, v1.001
 - Added Greek and Cyrillic glyphs
-- Released as "<NewFontFamilyName>"
+- Changed name to "Demo"
 
-7 March 2006 (Fred Foobar) <NewFontFamilyName> Version 1.2
+7 March 2006 (Fred Foobar) Bar v1.1
 - Tweaked contextual behaviours
-- Released as "<NewFontFamilyName>"
 
-1 Feb 2005 (Jane Doe) <NewFontFamilyName> Version 1.1
+1 Feb 2005 (Jane Doe) Bar v1.0
 - Improved build script performance and verbosity
 - Extended the smart code documentation
 - Corrected minor typos in the documentation
 - Fixed position of combining inverted breve below (U+032F)
 - Added OpenType/Graphite smart code for Armenian
 - Added Armenian glyphs (U+0531 -> U+0587) 
-- Released as "<NewFontFamilyName>"
+- Changed name to "Bar"
 
-1 Jan 2005 (Joe Smith) <FontFamilyName> Version 1.0
-- Initial release of font "<FontFamilyName>"
+1 Jan 2005 (Joe Smith) Foo v1.0
+- Initial release of font "Foo"
 
 
 Acknowledgements
 -------------------------
-(Here is where contributors can be acknowledged. 
 
-If you make modifications be sure to add your name (N), email (E), web-address
-(W) and description (D). This list is sorted by last name in alphabetical
-order.)
+When you make modifications, be sure to add your name (N), email (E),
+web-address (W) and description (D). This list is sorted by last name in
+alphabetical order.
 
 N: Jane Doe
 E: jane@university.edu
@@ -100,4 +103,7 @@ E: joe@fontstudio.org
 W: http://joe.fontstudio.org
 D: Designer - original Roman glyphs
 
-(Original authors can also include information here about their organization.)
+University Arts Dept is a research-based department specializing in 
+typography, and offers courses in typeface design and book design.
+
+FontStudio is a foundry based in New York City, USA.

@@ -1,0 +1,21 @@
+---
+type design boilerplate version: "0.2"
+type design boilerplate url: https://github.com/davelab6/Unified-Typeface-Design/
+typeface family:
+  name: Demo
+  tags:
+  - sans-serif
+  - pixel
+  - grotesque
+  - incomplete
+  - decorative
+  repository url: https://github.com/user/Demo
+  project url: https://website.com/demofontproject
+  software:
+  - Inkscape
+  - Fontforge
+  similar fonts:
+  - Helvetica
+  - Neue Haas Grotesk
+  sample text: The quick brown fox jumps over the lazy dog
+...

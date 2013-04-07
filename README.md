@@ -1,15 +1,20 @@
 # Myfont
 
-Short description of Thefont
+Short description of Demo
 
 ## Specimen
 
-![Specimen 1](documentation/images/specimen.png)
+![Demo-Italic-v1.001-specimen-001](https://raw.github.com/davelab6/Unified-Typeface-Design/master/documentation/images/Demo-Italic-v1.001-specimen-001.png)
 
 ## License
-Thefont is under [SIL Open Font License (OFL)](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL "SIL Open Font License")
 
-## UTD
+This Font Software is licensed under the SIL Open Font License, Version 1.1. 
+This license is copied below, and is also available with a FAQ at 
+http://scripts.sil.org/OFL
 
-This font repository follows the Unified Typeface Design standard.
-More info <a href="https://github.com/raphaelbastide/Unified-Typeface-Design">https://github.com/raphaelbastide/Unified-Typeface-Design</a>
+## Repository Layout
+
+This font repository follows the Type Design Boilerplate v1.0, 
+a standard way to organize font project source files. Learn more at 
+https://github.com/raphaelbastide/Unified-Typeface-Design
+>>>>>>> 46bd4ce3b47484abbbeb0dff158343e9d34fca8b
