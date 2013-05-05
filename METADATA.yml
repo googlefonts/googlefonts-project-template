@@ -1,17 +1,20 @@
 ---
 type design boilerplate version: "0.2"
-type design boilerplate url: https://github.com/davelab6/Unified-Typeface-Design/
+type design boilerplate url: https://github.com/raphaelbastide/Unified-Font-Repository/
 typeface family:
   name: Demo
   tags:
   - sans-serif
   - pixel
+  - 80s
+  - condesed
   - grotesque
+  - monospace
   - incomplete
   - decorative
   repository url: https://github.com/user/Demo
   project url: https://website.com/demofontproject
-  software:
+  tools:
   - Inkscape
   - Fontforge
   similar fonts:
