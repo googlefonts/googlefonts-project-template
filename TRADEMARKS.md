@@ -1,1 +1,1 @@
-Foo is a trademark of Yoyodyne, Inc.
+Demo is a trademark of FontStudio, Inc.

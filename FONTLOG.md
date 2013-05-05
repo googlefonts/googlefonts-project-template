@@ -1,8 +1,8 @@
 FONTLOG for Demo
 -------------------
 
-This file provides detailed information on the Foo font software.
-This information should be distributed along with the Foo fonts
+This file provides detailed information on the Demo font software.
+This information should be distributed along with the Demo fonts
 and any derivative works.
 
 
@@ -33,7 +33,7 @@ TODO
 Information for Contributors
 ------------------------------
 
-Foo is released under the OFL 1.1 - http://scripts.sil.org/OFL
+Demo is released under the OFL 1.1 - http://scripts.sil.org/OFL
 
 For information on what you're allowed to change or modify, consult the
 OFL-1.1.txt and OFL-FAQ.txt files. The OFL-FAQ also gives a very general
@@ -67,8 +67,8 @@ following the format of the other entries, to the start of this section.
 - Added Armenian glyphs (U+0531 -> U+0587) 
 - Changed name to "Bar"
 
-1 Jan 2005 (Joe Smith) Foo v1.0
-- Initial release of font "Foo"
+1 Jan 2005 (Joe Smith) Demo v1.0
+- Initial release of font "Demo"
 
 
 Acknowledgements
