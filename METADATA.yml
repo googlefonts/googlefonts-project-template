@@ -1,6 +1,6 @@
 ---
-type design boilerplate version: "0.2"
-type design boilerplate url: https://github.com/raphaelbastide/Unified-Font-Repository/
+unified font repository version: "0.2"
+unified font repository url: https://github.com/raphaelbastide/Unified-Font-Repository/
 typeface family:
   name: Demo
   tags:

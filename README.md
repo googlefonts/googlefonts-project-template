@@ -4,7 +4,7 @@ Short description of Demo
 
 ## Specimen
 
-![Demo-Italic-v1.001-specimen-001](https://raw.github.com/davelab6/Unified-Typeface-Design/master/documentation/images/Demo-Italic-v1.001-specimen-001.png)
+![Demo-Italic-v1.001-specimen-001](https://github.com/raphaelbastide/Unified-Font-Repository/master/documentation/images/Demo-Italic-v1.001-specimen-001.png)
 
 ## License
 
@@ -14,7 +14,7 @@ http://scripts.sil.org/OFL
 
 ## Repository Layout
 
-This font repository follows the Type Design Boilerplate v1.0, 
+This font repository follows the Unified Font Repository v2.0, 
 a standard way to organize font project source files. Learn more at 
-https://github.com/raphaelbastide/Unified-Typeface-Design
+https://github.com/raphaelbastide/Unified-Font-Repository
 
