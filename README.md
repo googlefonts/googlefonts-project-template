@@ -14,6 +14,4 @@ http://scripts.sil.org/OFL
 
 ## Repository Layout
 
-This font repository follows the Unified Font Repository v0.3,
-a standard way to organize font project source files. Learn more at
-https://github.com/raphaelbastide/Unified-Font-Repository
+This font repository structure is inspired by [Unified Font Repository v0.3](https://github.com/unified-font-repository/Unified-Font-Repository).
