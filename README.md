@@ -11,9 +11,11 @@ Short description of your font goes here.
 
 * Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Font Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
+* Add yourself to the `AUTHORS.txt` and `CONTRIBUTORS.txt` files.
+
 * Remove this section from the readme. :-)
 
-* Finally, add and commit any files you have modified (i.e. `README.md`, sources and `sources/config.yaml`) to git, then push to GitHub.
+* Finally, add and commit any files you have modified (i.e. `README.md`, `AUTHORS.txt`, `CONTRIBUTORS.txt`, the font sources, and `sources/config.yaml`) to git, then push to GitHub.
 
 ## Building
 
