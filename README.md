@@ -1,10 +1,25 @@
-# Myfont
+# My Font
 
-Short description of Demo Font. Read more about this [project](https://github.com/raphaelbastide/Unified-Font-Repository/blob/master/ABOUT.en_us.md)
+Short description of your font goes here.
 
-## Specimen
+## Setting up your font
 
-![Demo-Italic-v1.001-specimen-001](https://github.com/raphaelbastide/Unified-Font-Repository/master/documentation/images/Demo-Italic-v1.001-specimen-001.png)
+* First, place your font sources in the `sources` directory.
+
+* Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Font Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
+
+* Finally, remove this section from the readme. :-)
+
+## Building
+
+To build this font, you will need to install the [`yq` utility](https://github.com/mikefarah/yq). On OS X with Homebrew, type `brew install yq`; on Linux, try `snap install yq`; if all else fails, try the instructions on the linked page.
+
+Then:
+
+* `make build` will produce font files.
+* `make test` will run [FontBakery](https://github.com/googlefonts/fontbakery)'s quality assurance tests.
+* `make proof` will generate HTML proof files.
+
 
 ## License
 
@@ -14,4 +29,4 @@ http://scripts.sil.org/OFL
 
 ## Repository Layout
 
-This font repository structure is inspired by [Unified Font Repository v0.3](https://github.com/unified-font-repository/Unified-Font-Repository).
+This font repository structure is inspired by [Unified Font Repository v0.3](https://github.com/unified-font-repository/Unified-Font-Repository), modified for the Google Fonts workflow.
