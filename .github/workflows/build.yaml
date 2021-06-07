@@ -21,12 +21,23 @@ jobs:
       continue-on-error: true
     - name: Generate proofs
       run: make proof
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v2
+    - name: Rearrange
+      run: |
+          mkdir for-gh-pages
+          mv fontbakery-report.html for-gh-pages
+          mv ../proof/* for-gh-pages
+          git checkout -f gh-pages
+          cp -ar for-gh-pages/* .
+          rm -rf for-gh-pages
+    - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        name: Artifacts
-        path: |
-          fonts
-          fontbakery-report.md
-          fontbakery-report.html
-          proof
+        branch: gh-pages
+    # - name: Archive artifacts
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: Artifacts
+    #     path: |
+    #       fonts
+    #       fontbakery-report.md
+    #       fontbakery-report.html
+    #       proof
