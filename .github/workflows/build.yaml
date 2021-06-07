@@ -25,6 +25,7 @@ jobs:
       run: |
           mkdir for-gh-pages
           mv fontbakery-report.html for-gh-pages
+          git fetch --depth=1
           mv proof/* for-gh-pages
           git checkout -f gh-pages
           cp -ar for-gh-pages/* .
