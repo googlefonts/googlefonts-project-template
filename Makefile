@@ -19,7 +19,7 @@ build.stamp: venv
 	. venv/bin/activate; gftools builder sources/config.yaml && touch build.stamp
 
 venv/touchfile: requirements.txt
-	test -d venv || virtualenv venv
+	test -d venv || python3 -m venv venv
 	. venv/bin/activate; pip install -Ur requirements.txt
 	touch venv/touchfile
 
