@@ -4,11 +4,16 @@ Short description of your font goes here.
 
 ## Setting up your font
 
-* First, place your font sources in the `sources` directory.
+* Hit the green button above ("Use this template") to create your own repository.
+    - *Make sure to click the checkbox marked "Include all branches".*
+
+* Place your font sources in the `sources` directory.
 
 * Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Font Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
-* Finally, remove this section from the readme. :-)
+* Remove this section from the readme. :-)
+
+* Finally, add and commit any files you have modified (i.e. `README.md`, sources and `sources/config.yaml`) to git, then push to GitHub.
 
 ## Building
 
