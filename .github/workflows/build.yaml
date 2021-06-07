@@ -33,6 +33,7 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         branch: gh-pages
+        file_pattern: fonts *.html
     # - name: Archive artifacts
     #   uses: actions/upload-artifact@v2
     #   with:
