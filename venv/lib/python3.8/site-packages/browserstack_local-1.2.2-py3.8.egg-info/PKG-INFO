@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: browserstack-local
+Version: 1.2.2
+Summary: Python bindings for Browserstack Local
+Home-page: https://github.com/browserstack/browserstack-local-python
+Author: BrowserStack
+Author-email: support@browserstack.com
+License: UNKNOWN
+Download-URL: https://github.com/browserstack/browserstack-local-python/archive/master.zip
+Description: UNKNOWN
+Keywords: BrowserStack,Local,selenium,testing
+Platform: UNKNOWN

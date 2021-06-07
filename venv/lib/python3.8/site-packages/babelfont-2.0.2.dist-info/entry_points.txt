@@ -1,0 +1,3 @@
+[console_scripts]
+babelfont = babelfont.__main__:main
+

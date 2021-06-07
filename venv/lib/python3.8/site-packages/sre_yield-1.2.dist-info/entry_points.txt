@@ -1,0 +1,3 @@
+[console_scripts]
+demo_sre_yield = sre_yield:main
+

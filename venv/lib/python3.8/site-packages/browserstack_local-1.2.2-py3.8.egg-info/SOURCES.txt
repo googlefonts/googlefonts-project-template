@@ -1,0 +1,15 @@
+MANIFEST.in
+README
+setup.cfg
+setup.py
+browserstack/__init__.py
+browserstack/bserrors.py
+browserstack/local.py
+browserstack/local_binary.py
+browserstack_local.egg-info/PKG-INFO
+browserstack_local.egg-info/SOURCES.txt
+browserstack_local.egg-info/dependency_links.txt
+browserstack_local.egg-info/requires.txt
+browserstack_local.egg-info/top_level.txt
+tests/__init__.py
+tests/test_local.py

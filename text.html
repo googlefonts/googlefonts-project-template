@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Text</title>
+    
+    <style type="text/css">
+    
+        html{
+	  font-family: sans-serif;
+	}
+	.box-title{
+	  width: 100%;
+	  float: left;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	}
+	#font-toggle{
+	  display: block;
+	  font-weight: 700;
+	  cursor: pointer;
+	  -webkit-user-select: none; /* Safari */        
+	  -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+/Edge */
+	  user-select: none; /* Standard */
+	  text-align: center;
+	  color: white;
+	  background-color: black;
+	  width: 50px;
+	  display: block;
+	  padding: 10px;
+	}
+
+	  
+
+	  
+
+	  
+	    @font-face { src: url(fonts/MyFont-Regular.ttf); font-family: My-Font-Regular; font-weight: 400; font-stretch: 100%; font-style: normal; }
+	  
+
+	  
+
+	  
+
+	  
+	    .My-Font-Regular { font-family: My-Font-Regular; font-weight: 400; font-style: normal; font-stretch: 100%; }
+	  
+	
+    </style>
+</head>
+<body>
+    
+    <div id="content">
+	<h2>
+<b>Text</b>
+</h2>
+	
+  
+      <div class="box">
+	<div class="box-title">My-Font-Regular 14pt</div>
+	<span class="My-Font-Regular" style="font-size: 14pt">
+	  Resolution 217 A vom 10.12.1948Da die Anerkennung angeborenen gleichen Mitglieder Gemeinschaft Freiheit, Welt Nichtanerkennung Verachtung zu Barbarei Gewissen Streben Herrschaft Tyrannei Entwicklung Charta Person Lebensbedingungen verpflichtet Zusammenarbeit Ideal, jeder Organe Unterricht begegnen.Jeder Kulthandlungen Existenz que qedir-qimmiti Yora IQUl, Xiskuamana, 360 5IGELE
+          </span>
+       </div>
+    
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "after"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	  items = document.getElementsByClassName("box")
+	  
+	  if (POSITION === "before") {
+	  POSITION = "after"
+	  for (item of items) {
+	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("before", "after")
+            item.lastElementChild.className = item.lastElementChild.className.replace("before", "after")
+	    fontToggle.textContent = "After"
+	  }
+	  } else {
+	  POSITION = "before"
+	  for (item of items) {
+	    item.firstElementChild.textContent = item.firstElementChild.textContent.replace("after", "before")
+            item.lastElementChild.className = item.lastElementChild.className.replace("after", "before")
+	    fontToggle.textContent = "Before"
+	  }
+	}
+	}
+	fontToggle.addEventListener("click", switchFonts);
+	</script>
+</html>

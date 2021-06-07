@@ -1,0 +1,3 @@
+[console_scripts]
+dehinter = dehinter.__main__:main
+

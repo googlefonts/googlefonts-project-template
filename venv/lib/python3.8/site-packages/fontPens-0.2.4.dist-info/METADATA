@@ -1,0 +1,40 @@
+Metadata-Version: 2.0
+Name: fontPens
+Version: 0.2.4
+Summary: A collection of classes implementing the pen protocol for manipulating glyphs.
+Home-page: https://github.com/robofab-developers/fontPens
+Author: Just van Rossum, Tal Leming, Erik van Blokland
+Author-email: info@robofab.com
+License: OpenSource, BSD-style
+Platform: Any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Multimedia :: Graphics :: Graphics Conversion
+Requires-Dist: FontTools (>=3.32.0)
+
+|Build Status| |Coverage| |PyPI| |Versions|
+
+fontPens
+--------
+
+A collection of classes implementing the pen protocol for manipulating glyphs.
+
+
+.. |Build Status| image:: https://travis-ci.org/robofab-developers/fontPens.svg?branch=master
+   :target: https://travis-ci.org/robofab-developers/fontPens
+.. |PyPI| image:: https://img.shields.io/pypi/v/fontPens.svg
+   :target: https://pypi.org/project/fontPens
+.. |Versions| image:: https://img.shields.io/badge/python-2.7%2C%203.7-blue.svg
+   :alt: Python Versions
+.. |Coverage| image:: https://codecov.io/gh/robofab-developers/fontPens/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/robofab-developers/fontPens
+
+

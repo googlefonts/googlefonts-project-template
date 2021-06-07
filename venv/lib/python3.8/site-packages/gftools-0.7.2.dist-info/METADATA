@@ -1,0 +1,139 @@
+Metadata-Version: 2.1
+Name: gftools
+Version: 0.7.2
+Summary: Google Fonts Tools is a set of command-line tools for testing font projects
+Home-page: https://github.com/googlefonts/tools/
+Author: Google Fonts Tools Authors: Dave Crossland, Felipe Sanches, Lasse Fister, Marc Foley, Eli Heuer, Roderick Sheeter
+Author-email: dave@lab6.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Text Processing :: Fonts
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: FontTools[ufo]
+Requires-Dist: Flask
+Requires-Dist: absl-py
+Requires-Dist: glyphsLib
+Requires-Dist: PyGithub
+Requires-Dist: pillow
+Requires-Dist: protobuf
+Requires-Dist: requests
+Requires-Dist: tabulate
+Requires-Dist: unidecode
+Requires-Dist: opentype-sanitizer
+Requires-Dist: vttlib
+Requires-Dist: pygit2
+Requires-Dist: strictyaml
+Requires-Dist: fontmake (>=2.4.0)
+Requires-Dist: skia-pathops
+Requires-Dist: statmake
+Requires-Dist: PyYAML
+Requires-Dist: babelfont
+Requires-Dist: ttfautohint-py
+Requires-Dist: brotli
+Requires-Dist: browserstack-local (==1.2.2)
+Requires-Dist: pybrowserstack-screenshots (==0.1)
+Requires-Dist: pandas
+Requires-Dist: xlrd
+Requires-Dist: openpyxl
+Provides-Extra: qa
+Requires-Dist: fontbakery ; extra == 'qa'
+Requires-Dist: fontdiffenator ; extra == 'qa'
+Requires-Dist: gfdiffbrowsers ; extra == 'qa'
+
+# Google Fonts Tools
+
+This project contains tools used for working with the Google Fonts collection, plus **Google Fonts Glyph Set Documentation** in the [/encodings](https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings) subdirectory. While these tools are primarily intended for contributors to the Google Fonts project, anyone who works with fonts could find them useful.
+
+The tools and files under this directory are available under the Apache License v2.0, for details see [LICENSE](LICENSE)
+
+## Google Fonts Official Glyph Sets (Encodings)
+
+This repo also contains definitions of glyph sets useful for type designers:
+
+<https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings/GF%20Glyph%20Sets>
+
+## Tool Usage Examples
+
+Compare fonts:
+
+    gftools compare-font font1.ttf font2.ttf
+
+Add a METADATA.pb to a family directory
+
+    gftools add-font ../ofl/newfamily
+
+Sanity check a family directory:
+
+    gftools sanity-check --repair_script=/tmp/fix.py ../ofl/josefinsans
+    gftools sanity-check --repair_script=/tmp/fix.py --fix_type=fsSelection ../ufl
+
+Check a font family against the same family hosted on Google Fonts:
+
+    gftools qa [fonts.ttf] -gfb -a -o qa
+
+Check a variable font family against the same family as static fonts:
+
+    gftools qa -f [vf_fonts] -fb [static_fonts] --diffenator --diffbrowsers -o ~/path/out
+
+Add a DSIG table to a font
+
+    gftools fix-dsig font1.ttf
+
+Fix a non hinted font
+
+    gftools fix-nonhinting font_in.ttf font_out.ttf
+
+Package and PR a family update to google/fonts. Much more detailed [documentation](./docs/gftools-packager).
+
+    gftools packager "Family Sans" path/to/local/google/fonts -py
+
+## Tool Installation
+
+Please install these tools using pip:
+
+    pip install gftools
+
+If you need to use `gftools qa`, you will need to install Harfbuzz, Cairo, FreeType and pkg-config. These can be installed on OS X using homebrew:
+
+    brew install cairo freetype harfbuzz pkg-config
+
+Once You have installed these system packages, install gftools using the following command:
+
+    pip install 'gftools[qa]'
+
+
+### Tool Requirements and Dependencies
+
+These tools depend on the submodule `GlyphsInfo`.
+Make sure the submodule is up to date by running:
+
+    git submodule update --init --recursive
+
+`gftool packager` needs the command line `git` program in a version >= Git 2.5 (Q2 2015) in order to perform a shallow clone (`--depth 1`) of the font upstream repository and branch. This is not supported by pygit2/libgit2 yet.
+
+### Google Fonts API Key
+
+In order to use the scripts **gftools qa** and **gftools family-html-snippet**, you will need to generate a Google Fonts api key, https://developers.google.com/fonts/. You will then need to create a new text file located on your system at `~/.gf-api-key` (where ~ is your home directory), which contains the following:
+
+```
+[Credentials]
+key = your-newly-generated-googlefonts-api-key
+
+```
+
+**Upstream project repos**
+
+* https://github.com/schriftgestalt/GlyphsInfo
+* https://github.com/google/google-apputils
+* https://github.com/google/protobuf
+* https://github.com/behdad/fonttools
+
+
