@@ -34,12 +34,9 @@ jobs:
       with:
         branch: gh-pages
         file_pattern: fonts *.html
-    # - name: Archive artifacts
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: Artifacts
-    #     path: |
-    #       fonts
-    #       fontbakery-report.md
-    #       fontbakery-report.html
-    #       proof
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Artifacts
+        path: |
+          fonts
