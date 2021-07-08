@@ -1,9 +1,9 @@
 Copyright 20** The Unified Font Repository Project Authors (https://github.com/googlefonts/Unified-Font-Repository)
 
-
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 https://scripts.sil.org/OFL
+
 
 SIL Open Font License v1.1
 ====================================================
