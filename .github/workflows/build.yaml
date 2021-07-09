@@ -15,9 +15,9 @@ jobs:
       run: |
         sudo snap install yq
     - name: Install ttfautohint
-        run: |
-          sudo apt-get update
-          sudo apt-get install ttfautohint
+      run: |
+        sudo apt-get update
+        sudo apt-get install ttfautohint
     - name: Build font
       run: make build
     - name: Check with fontbakery
