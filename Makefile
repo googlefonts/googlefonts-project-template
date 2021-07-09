@@ -27,7 +27,7 @@ test: venv build.stamp
 	. venv/bin/activate; fontbakery check-googlefonts -l WARN --succinct --html fontbakery-report.html --ghmarkdown fontbakery-report.md $(shell find fonts -type f)
 
 proof: venv build.stamp
-	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof --imgs
+	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof
 
 clean:
 	rm -rf venv
