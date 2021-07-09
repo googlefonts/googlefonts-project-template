@@ -17,13 +17,14 @@ Description of you and/or organisation goes here.
 
 * Place your font sources in the `sources` directory.
 
+ Unlike many open source distributors, Google Fonts is a **curated content**. Fonts shipped to the platform have to match the [Google Fonts Specifications](https://github.com/googlefonts/gf-docs/tree/main/Spec). Please read them carefully.
+
 * Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Font Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
-* Unlike many open source distributors, Google Fonts is a **curated content**. Fonts ship to the platform have to match the [Google Fonts Specifications](https://github.com/googlefonts/gf-docs/tree/main/Spec). Please read them carefully.
 
 * Add yourself to the `AUTHORS.txt` and `CONTRIBUTORS.txt` files.
 
-* Update the first line of the OFL.txt (year and project name). Update also the Copyright string in the sources, it has to be the same as the OFL.txt.
+* Update the first line of the OFL.txt (year and project name). Update also the Copyright string in the sources, it has to be the same as the OFL.txt. The `.glyphs` file in this repo gives you required base charset and font info.
 
 * Remove this section from the readme. :-)
 
