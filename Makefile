@@ -24,10 +24,10 @@ venv/touchfile: requirements.txt
 	touch venv/touchfile
 
 test: venv build.stamp
-	. venv/bin/activate; fontbakery check-googlefonts --html fontbakery-report.html --ghmarkdown fontbakery-report.md $(shell find fonts -type f)
+	. venv/bin/activate; fontbakery check-googlefonts -l WARN --succinct --html fontbakery-report.html --ghmarkdown fontbakery-report.md $(shell find fonts -type f)
 
 proof: venv build.stamp
-	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof
+	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof --imgs
 
 clean:
 	rm -rf venv
