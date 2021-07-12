@@ -30,4 +30,4 @@ proof: venv build.stamp
 
 clean:
 	rm -rf venv
-	find -iname "*.pyc" -delete
+	find . -name "*.pyc" | xargs rm delete
