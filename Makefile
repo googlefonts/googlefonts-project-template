@@ -1,6 +1,5 @@
-SOURCES=$(shell yq e '.sources.[] | sub("^","sources/")' sources/config.yaml )
-FAMILY=$(shell yq e '.familyName' sources/config.yaml )
-
+SOURCES=$(shell python3 scripts/read-config.py --sources )
+FAMILY=$(shell python3 scripts/read-config.py --family )
 help:
 	@echo "###"
 	@echo "# Build targets for $(FAMILY)"

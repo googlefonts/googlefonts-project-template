@@ -36,9 +36,7 @@ Description of you and/or organisation goes here.
 
 Fonts are built automatically by GitHub Actions - take a look in the "Actions" tab for the latest build.
 
-If you want to build fonts manually on your own computer, you will need to install the [`yq` utility](https://github.com/mikefarah/yq). On macOS with Homebrew, type `brew install yq`; on Linux, try `snap install yq`; if all else fails, try the instructions on the on the [`yq` GitHub](https://github.com/mikefarah/yq) page [here](https://github.com/mikefarah/yq#install).
-
-Then:
+If you want to build fonts manually on your own computer:
 
 * `make build` will produce font files.
 * `make test` will run [FontBakery](https://github.com/googlefonts/fontbakery)'s quality assurance tests.
