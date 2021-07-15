@@ -30,7 +30,7 @@ Description of you and/or organisation goes here.
 
 * Finally, add and commit any files you have modified (i.e. `README.md`, `AUTHORS.txt`, `CONTRIBUTORS.txt`, the font sources, and `sources/config.yaml`) to git, then push to GitHub.
 
-* Once you are happy with your font, add promotional assets in the documentation directory (format: 4:3). Make it different from the pic you use in this README.
+* Once you are happy with your font, add promotional assets in the documentation directory. Make it different from the pic you use in this README. You can get inspired by existing tweet @googlefonts like: https://twitter.com/googlefonts/status/1415562928657416192.
 
 ## Building
 
