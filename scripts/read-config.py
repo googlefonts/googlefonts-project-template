@@ -5,6 +5,7 @@
 import argparse
 import re
 import sys
+import os
 
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group(required=True)
@@ -12,7 +13,7 @@ group.add_argument('--sources',action='store_true')
 group.add_argument('--family',action='store_true')
 args = parser.parse_args()
 
-with open("sources/config.yaml") as config:
+with open(os.path.join("sources", "config.yaml")) as config:
 	data = config.read()
 
 if args.family:
