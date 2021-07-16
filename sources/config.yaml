@@ -1,5 +1,7 @@
 sources:
-    - MyFont.glyphs
-familyName: My Font
-outputDir: "../fonts"
-
+  - Rubik.glyphs
+  - Rubik-Italic.glyphs
+axisOrder:
+  - wght
+  - ital
+familyName: Rubik
