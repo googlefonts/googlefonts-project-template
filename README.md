@@ -46,6 +46,11 @@ If you want to build fonts manually on your own computer:
 
 The proof files and QA tests are also available automatically via GitHub Actions - look at `https://yourname.github.io/your-font-repository-name`.
 
+## Updating
+
+To update your font repository to bring in the latest best-practices from
+our Unified Font Repository, run `make update-ufr` from the command line.
+
 ## License
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
