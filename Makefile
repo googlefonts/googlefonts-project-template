@@ -31,3 +31,6 @@ proof: venv build.stamp
 clean:
 	rm -rf venv
 	find . -name "*.pyc" | xargs rm delete
+
+update-ufr:
+	npx update-template https://github.com/googlefonts/Unified-Font-Repository/
