@@ -28,6 +28,7 @@ jobs:
     - name: Rearrange
       run: |
           mkdir for-gh-pages
+          mv fontbakery-report.md for-gh-pages
           mv fontbakery-report.html for-gh-pages
           git fetch --depth=1
           mv proof/* for-gh-pages
@@ -44,3 +45,5 @@ jobs:
         name: Artifacts
         path: |
           fonts
+          *.html
+          fontbakery-report.md
