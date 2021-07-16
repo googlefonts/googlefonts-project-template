@@ -15,7 +15,7 @@ Description of you and/or organisation goes here.
 * Hit the green button above ("Use this template") to create your own repository.
     - *Make sure to click the checkbox marked "Include all branches".*
 
-* Place your font sources in the `sources` directory.
+* Place your font sources in the `sources` directory. These sources may be either in Glyphs format or UFO/Designspace formats.
 
  Unlike many open source distributors, Google Fonts is a **curated content**. Fonts shipped to the platform have to match the [Google Fonts Specifications](https://github.com/googlefonts/gf-docs/tree/main/Spec). Please read them carefully.
 
