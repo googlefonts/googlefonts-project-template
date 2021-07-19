@@ -3,7 +3,7 @@
 # COMPRESSED WITH: https://github.com/kornelski/pngquant
 # $ brew install pngquant
 # $ pngquant image.png
-from drawBot import *
+from drawbot_skia.drawbot import *
 
 # CONSTANTS
 WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
@@ -60,12 +60,15 @@ stroke(None)
 # AUXILIARY TEXT
 font("Helvetica")
 fontSize(48)
-BOX1 = (MARGIN, HEIGHT - MARGIN * 1.5, WIDTH - MARGIN * 2, MARGIN / 2)
-BOX2 = (MARGIN, MARGIN, WIDTH - MARGIN * 2, MARGIN / 2)
-textBox("My Font Regular", BOX1, align="left")
-textBox("v1.000", BOX1, align="right")
-textBox("https://github.com/googlefonts/Unified-Font-Repository", BOX2, align="left")
-textBox("OFL v1.1", BOX2, align="right")
+POS1l = (MARGIN, HEIGHT - MARGIN * 1.5)
+POS1r = (WIDTH - MARGIN * 2, HEIGHT - MARGIN * 1.5)
+text("My Font Regular", POS1l, align="left")
+text("v1.000", POS1r, align="right")
+
+POS2l = (MARGIN, MARGIN * 1.2)
+POS2r = (WIDTH - MARGIN * 2, MARGIN * 1.2)
+text("https://github.com/googlefonts/Unified-Font-Repository", POS2l, align="left")
+text("OFL v1.1", POS2r, align="right")
 
 
 # SAVE IMAGE
