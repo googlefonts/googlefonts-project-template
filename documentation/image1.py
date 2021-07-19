@@ -3,11 +3,16 @@ from fontTools.ttLib import TTFont
 from fontTools.misc.fixedTools import floatToFixedToStr
 import subprocess
 import sys
+import argparse
 
-if len(sys.argv) < 2:
-    print("Run me with python %s <fontfile.ttf>" % __file__)
-    sys.exit(1)
-FONT_PATH = sys.argv[1]
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--output', metavar="PNG",
+                    help='where to write the PNG file')
+args = parser.parse_args()
+
+FONT_PATH = "fonts/ttf/Rubik-Regular.ttf"
 
 # CONSTANTS
 WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
@@ -88,5 +93,5 @@ text("OFL v1.1", POS2r, align="right")
 
 
 # SAVE IMAGE
-saveImage("image1.png")
+saveImage(args.output)
 print("DrawBot: Done")
