@@ -1,12 +1,28 @@
-# RENDER THIS DOCUMENT WITH DRAWBOT: http://www.drawbot.com
-# $ python3 image1.py
-# COMPRESSED WITH: https://github.com/kornelski/pngquant
-# $ brew install pngquant
-# $ pngquant image.png
 from drawbot_skia.drawbot import *
+from fontTools.ttLib import TTFont
+from fontTools.misc.fixedTools import floatToFixedToStr
+import subprocess
+import sys
+
+if len(sys.argv) < 2:
+    print("Run me with python %s <fontfile.ttf>" % __file__)
+    sys.exit(1)
+FONT_PATH = sys.argv[1]
 
 # CONSTANTS
 WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
+BIG_TEXT = "Aa"
+
+AUXILIARY_FONT = "Helvetica"
+AUXILIARY_FONT_SIZE = 48
+
+# Constants we will work out dynamically
+MY_URL = subprocess.check_output("git remote get-url origin", shell=True).decode()
+
+ttFont = TTFont(FONT_PATH)
+
+MY_FONT_NAME = ttFont["name"].getDebugName(4)
+FONT_VERSION = "v%s" % floatToFixedToStr(ttFont["head"].fontRevision, 16)
 
 # DRAWS A GRID
 def grid():
@@ -36,7 +52,7 @@ def remap(value, inputMin, inputMax, outputMin, outputMax):
 
 # DRAW PAGE
 newPage(WIDTH, HEIGHT)
-font("../fonts/ttf/MyFont-Regular.ttf")
+font(FONT_PATH)
 fill(0)
 rect(-2, -2, WIDTH + 2, HEIGHT + 2)
 # grid() # Toggle for grid view
@@ -46,7 +62,7 @@ rect(-2, -2, WIDTH + 2, HEIGHT + 2)
 fill(1)
 stroke(None)
 fontSize(MARGIN * 8)
-text("Aa", (MARGIN * 3.5, MARGIN * 5))
+text(BIG_TEXT, (MARGIN * 3.5, MARGIN * 5))
 
 
 # MARGIN LINES
@@ -58,16 +74,16 @@ stroke(None)
 
 
 # AUXILIARY TEXT
-font("Helvetica")
-fontSize(48)
+font(AUXILIARY_FONT)
+fontSize(AUXILIARY_FONT_SIZE)
 POS1l = (MARGIN, HEIGHT - MARGIN * 1.5)
 POS1r = (WIDTH - MARGIN * 2, HEIGHT - MARGIN * 1.5)
-text("My Font Regular", POS1l, align="left")
-text("v1.000", POS1r, align="right")
+text(MY_FONT_NAME, POS1l, align="left")
+text(FONT_VERSION, POS1r, align="right")
 
 POS2l = (MARGIN, MARGIN * 1.2)
 POS2r = (WIDTH - MARGIN * 2, MARGIN * 1.2)
-text("https://github.com/googlefonts/Unified-Font-Repository", POS2l, align="left")
+text(MY_URL, POS2l, align="left")
 text("OFL v1.1", POS2r, align="right")
 
 
