@@ -1,13 +1,16 @@
 SOURCES=$(shell python3 scripts/read-config.py --sources )
 FAMILY=$(shell python3 scripts/read-config.py --family )
+DRAWBOT_SCRIPTS=$(shell ls documentation/*.py)
+DRAWBOT_OUTPUT=$(shell ls documentation/*.py | sed 's/\.py/.png/g')
 help:
 	@echo "###"
 	@echo "# Build targets for $(FAMILY)"
 	@echo "###"
 	@echo
-	@echo "  make build: Builds the fonts and places them in the fonts/ directory"
-	@echo "  make test:  Tests the fonts with fontbakery"
-	@echo "  make proof: Creates HTML proof documents in the proof/ directory"
+	@echo "  make build:  Builds the fonts and places them in the fonts/ directory"
+	@echo "  make test:   Tests the fonts with fontbakery"
+	@echo "  make proof:  Creates HTML proof documents in the proof/ directory"
+	@echo "  make images: Creates PNG specimen images in the documentation/ directory"
 	@echo
 
 build: build.stamp sources/config.yaml $(SOURCES)
@@ -27,6 +30,12 @@ test: venv build.stamp
 
 proof: venv build.stamp
 	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof
+
+images: venv build.stamp $(DRAWBOT_OUTPUT)
+	git add documentation/*.png && git commit -m "Rebuild images" documentation/*.png
+
+%.png: %.py build.stamp
+	python3 $< --output $@
 
 clean:
 	rm -rf venv
