@@ -1,3 +1,4 @@
 fontmake>=2.4
 fontbakery>=0.7
 gftools[qa]>=0.7
+drawbot-skia>=0.4.8
