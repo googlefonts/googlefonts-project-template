@@ -60,8 +60,6 @@ if owner == BASE_OWNER and reponame == BASE_REPONAME:
     touch()
     sys.exit()
 
-changed_files = []
-
 # INITIALIZATION STEPS
 
 # First, the README file contains URLs to pages in the `gh-pages` branch of the
@@ -92,15 +90,6 @@ readme = readme.replace(
 with open("README.md", "w") as fh:
     fh.write(readme)
 
-changed_files.append("README.md")
-
 # Finally, we add a "touch file" called ".init.stamp" to the repository which
 # prevents this first-run process from being run again.
 touch()
-changed_files.append(".init.stamp")
-
-# Anything we changed needs to be added to git
-git.add(changed_files)
-
-git.commit("-m", f"[no ci] Setup {owner}/{reponame} as new repository")
-git.push()
