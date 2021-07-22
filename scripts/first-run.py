@@ -49,7 +49,7 @@ except Exception as e:
 m = re.match(r"https://github.com/(.*)/(.*)/", str(my_repo_url))
 if not m:
     lose(
-        "My git repository URL didn't look what I expected - are you hosting this on github?"
+        r"My git repository URL ({my_repo_url}) didn't look what I expected - are you hosting this on github?"
     )
 
 owner, reponame = m[1], m[2]
