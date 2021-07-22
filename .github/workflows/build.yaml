@@ -21,6 +21,14 @@ jobs:
         key: ${{ runner.os }}-venv-${{ hashFiles('**/requirements*.txt') }}
         restore-keys: |
           ${{ runner.os }}-venv-
+    - name: Do first-run script if necessary
+      run: make .init.stamp
+      if: github.repository != 'googlefonts/Unified-Font-Repository'
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      name: First-run setup
+      if: github.repository != 'googlefonts/Unified-Font-Repository'
+      with:
+        file_pattern: .init.stamp README.md
     - name: Build font
       run: make build
     - name: Check with fontbakery
@@ -39,12 +47,6 @@ jobs:
           git checkout -f gh-pages
           cp -ar for-gh-pages/* .
           rm -rf for-gh-pages
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      name: First-run setup
-      if: github.repository != 'googlefonts/Unified-Font-Repository'
-      with:
-        branch: gh-pages
-        file_pattern: .init.stamp README.md
     - uses: stefanzweifel/git-auto-commit-action@v4
       name: Commit to gh-pages
       with:
