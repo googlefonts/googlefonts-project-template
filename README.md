@@ -63,6 +63,10 @@ The proof files and QA tests are also available automatically via GitHub Actions
 To update your font repository to bring in the latest best-practices from
 our Unified Font Repository, run `make update-ufr` from the command line.
 
+## Changelog
+
+When you update your font (new version or new release), please report here the changes — with a date.
+
 ## License
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
