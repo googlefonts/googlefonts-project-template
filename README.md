@@ -66,6 +66,8 @@ If you want to build fonts manually on your own computer:
 
 The proof files and QA tests are also available automatically via GitHub Actions - look at `https://yourname.github.io/your-font-repository-name`.
 
+Deliveries of release TTFs to the team should also be manually uploaded to a [private Drive folder](https://drive.google.com/corp/drive/folders/1Fa___B4J556DmWEs4E6PLtq5vwhf5ef7?resourcekey=0-pmyhTmN1GNM2Iy8zWWYsWQ)
+
 ## Changelog
 
 When you update your font (new version or new release), please report all notable changes here, with a date.
