@@ -14,12 +14,7 @@ WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
 FONT_PATH = "fonts/ttf/Rubik-Regular.ttf"
 AUXILIARY_FONT = "Helvetica"
 AUXILIARY_FONT_SIZE = 48
-BIG_TEXT = FormattedString()
-BIG_TEXT.append("Aa", font=FONT_PATH, fontSize=MARGIN * 8, fill=(1))
-BIG_TEXT_WIDTH = BIG_TEXT.size().width
-BIG_TEXT_HEIGHT = BIG_TEXT.size().height
-BIG_TEXT_X_POS = (WIDTH - BIG_TEXT_WIDTH) / 2  # Adjust to move main text on x-axis
-BIG_TEXT_Y_POS = HEIGHT - BIG_TEXT_HEIGHT - (MARGIN * 2)
+BIG_TEXT = "Aa"
 
 ttFont = TTFont(FONT_PATH)
 
@@ -64,7 +59,12 @@ rect(-2, -2, WIDTH + 2, HEIGHT + 2)
 # Main text
 fill(1)
 stroke(None)
-text(BIG_TEXT, (BIG_TEXT_X_POS, BIG_TEXT_Y_POS))
+font(FONT_PATH)
+fontSize(MARGIN * 8)
+# Adjust this line to center main text manually.
+# TODO: This should be done automatically when drawbot-skia
+# has support for textBox() and FormattedString
+text(BIG_TEXT, ((WIDTH / 2) - MARGIN * 4.75, (HEIGHT / 2) - MARGIN * 2.5))
 
 # Divider lines
 stroke(1)
@@ -78,9 +78,9 @@ stroke(None)
 font(AUXILIARY_FONT)
 fontSize(AUXILIARY_FONT_SIZE)
 POS_TOP_LEFT = (MARGIN, HEIGHT - MARGIN * 1.5)
-POS_TOP_RIGHT = (WIDTH - MARGIN * 0.9, HEIGHT - MARGIN * 1.5)
+POS_TOP_RIGHT = (WIDTH - MARGIN, HEIGHT - MARGIN * 1.5)
 POS_BOTTOM_LEFT = (MARGIN, MARGIN)
-POS_BOTTOM_RIGHT = (WIDTH - MARGIN * 0.85, MARGIN)
+POS_BOTTOM_RIGHT = (WIDTH - MARGIN * 0.9, MARGIN)
 URL_AND_HASH = MY_URL + "at commit " + MY_HASH
 URL_AND_HASH = URL_AND_HASH.replace("\n", " ")
 
