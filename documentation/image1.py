@@ -5,34 +5,34 @@ import subprocess
 import sys
 import argparse
 
-import argparse
-
 parser = argparse.ArgumentParser()
-parser.add_argument('--output', metavar="PNG",
-                    help='where to write the PNG file')
+parser.add_argument("--output", metavar="PNG", help="where to write the PNG file")
 args = parser.parse_args()
 
-FONT_PATH = "fonts/ttf/Rubik-Regular.ttf"
-
-# CONSTANTS
+# Constants
 WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
-BIG_TEXT = "Aa"
-
+FONT_PATH = "fonts/ttf/Rubik-Regular.ttf"
 AUXILIARY_FONT = "Helvetica"
 AUXILIARY_FONT_SIZE = 48
-
-# Constants we will work out dynamically
-MY_URL = subprocess.check_output("git remote get-url origin", shell=True).decode()
+BIG_TEXT = FormattedString()
+BIG_TEXT.append("Aa", font=FONT_PATH, fontSize=MARGIN * 8, fill=(1))
+BIG_TEXT_WIDTH = BIG_TEXT.size().width
+BIG_TEXT_HEIGHT = BIG_TEXT.size().height
+BIG_TEXT_X_POS = (WIDTH - BIG_TEXT_WIDTH) / 2  # Adjust to move main text on x-axis
+BIG_TEXT_Y_POS = HEIGHT - BIG_TEXT_HEIGHT - (MARGIN * 2)
 
 ttFont = TTFont(FONT_PATH)
 
+# Constants we will work out dynamically
+MY_URL = subprocess.check_output("git remote get-url origin", shell=True).decode()
+MY_HASH = subprocess.check_output("git rev-parse --short HEAD", shell=True).decode()
 MY_FONT_NAME = ttFont["name"].getDebugName(4)
 FONT_VERSION = "v%s" % floatToFixedToStr(ttFont["head"].fontRevision, 16)
 
-# DRAWS A GRID
+# Draws a grid
 def grid():
     stroke(1, 0.2)
-    strokeWidth(1)
+    strokeWidth(2)
     STEP_X, STEP_Y = 0, 0
     INCREMENT_X, INCREMENT_Y = MARGIN / 2, MARGIN / 2
     rect(MARGIN, MARGIN, WIDTH - (MARGIN * 2), HEIGHT - (MARGIN * 2))
@@ -46,8 +46,8 @@ def grid():
     polygon((0, HEIGHT / 2), (WIDTH, HEIGHT / 2))
 
 
-# REMAP INPUT RANGE TO VF AXIS RANGE
-# (E.G. SINE WAVE(-1,1) to WGHT(100,900))
+# Remap input range to VF axis range
+# (E.G. sinewave(-1,1) to wght(100,900))
 def remap(value, inputMin, inputMax, outputMin, outputMax):
     inputSpan = inputMax - inputMin  # FIND INPUT RANGE SPAN
     outputSpan = outputMax - outputMin  # FIND OUTPUT RANGE SPAN
@@ -55,43 +55,40 @@ def remap(value, inputMin, inputMax, outputMin, outputMax):
     return outputMin + (valueScaled * outputSpan)
 
 
-# DRAW PAGE
+# Draw page
 newPage(WIDTH, HEIGHT)
-font(FONT_PATH)
 fill(0)
 rect(-2, -2, WIDTH + 2, HEIGHT + 2)
-# grid() # Toggle for grid view
+# grid() # uncomment to view a grid over the background
 
-
-# MAIN TEXT
+# Main text
 fill(1)
 stroke(None)
-fontSize(MARGIN * 8)
-text(BIG_TEXT, (MARGIN * 3.5, MARGIN * 5))
+text(BIG_TEXT, (BIG_TEXT_X_POS, BIG_TEXT_Y_POS))
 
-
-# MARGIN LINES
+# Divider lines
 stroke(1)
-strokeWidth(2)
+strokeWidth(4)
+lineCap("round")
 line((MARGIN, HEIGHT - MARGIN), (WIDTH - MARGIN, HEIGHT - MARGIN))
-line((MARGIN, MARGIN), (WIDTH - MARGIN, MARGIN))
+line((MARGIN, MARGIN + (MARGIN / 2)), (WIDTH - MARGIN, MARGIN + (MARGIN / 2)))
 stroke(None)
 
-
-# AUXILIARY TEXT
+# Auxiliary text
 font(AUXILIARY_FONT)
 fontSize(AUXILIARY_FONT_SIZE)
-POS1l = (MARGIN, HEIGHT - MARGIN * 1.5)
-POS1r = (WIDTH - MARGIN, HEIGHT - MARGIN * 1.5)
-text(MY_FONT_NAME, POS1l, align="left")
-text(FONT_VERSION, POS1r, align="right")
+POS_TOP_LEFT = (MARGIN, HEIGHT - MARGIN * 1.5)
+POS_TOP_RIGHT = (WIDTH - MARGIN * 0.9, HEIGHT - MARGIN * 1.5)
+POS_BOTTOM_LEFT = (MARGIN, MARGIN)
+POS_BOTTOM_RIGHT = (WIDTH - MARGIN * 0.85, MARGIN)
+URL_AND_HASH = MY_URL + "at commit " + MY_HASH
+URL_AND_HASH = URL_AND_HASH.replace("\n", " ")
 
-POS2l = (MARGIN, MARGIN * 1.2)
-POS2r = (WIDTH - MARGIN, MARGIN * 1.2)
-text(MY_URL, POS2l, align="left")
-text("OFL v1.1", POS2r, align="right")
+text(MY_FONT_NAME, POS_TOP_LEFT, align="left")
+text(FONT_VERSION, POS_TOP_RIGHT, align="right")
+text(URL_AND_HASH, POS_BOTTOM_LEFT, align="left")
+text("OFL v1.1", POS_BOTTOM_RIGHT, align="right")
 
-
-# SAVE IMAGE
+# Save output
 saveImage(args.output)
 print("DrawBot: Done")
