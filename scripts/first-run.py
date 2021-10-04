@@ -52,7 +52,8 @@ if not any([https_url, ssh_url]):
     lose(
         f"My git repository URL ({my_repo_url}) didn't look what I expected - are you hosting this on github?"
     )
-
+if https_url is not None: m = https_url
+if ssh_url is not None: m = ssh_url
 owner, reponame = m[1], m[2]
 
 if owner == BASE_OWNER and reponame == BASE_REPONAME:
