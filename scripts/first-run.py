@@ -46,8 +46,9 @@ try:
 except Exception as e:
     lose("Could not use git to find my own repository URL", e)
 
-m = re.match(r"https://github.com/(.*)/(.*)/?", str(my_repo_url))
-if not m:
+https_url = re.match(r"https://github.com/(.*)/(.*)/?", str(my_repo_url))
+ssh_url = re.match(r"git@github.com:(.*)/(.*)/?", str(my_repo_url))
+if not any([https_url, ssh_url]):
     lose(
         f"My git repository URL ({my_repo_url}) didn't look what I expected - are you hosting this on github?"
     )
