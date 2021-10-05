@@ -46,7 +46,7 @@ try:
 except Exception as e:
     lose("Could not use git to find my own repository URL", e)
 
-m = re.match(r"https://github.com/(.*)/(.*)/?", str(my_repo_url))
+m = re.match(r"(?:https://github.com/|git@github.com:)(.*)/(.*)/?", str(my_repo_url))
 if not m:
     lose(
         f"My git repository URL ({my_repo_url}) didn't look what I expected - are you hosting this on github?"
