@@ -51,6 +51,7 @@ if not m:
     lose(
         f"My git repository URL ({my_repo_url}) didn't look what I expected - are you hosting this on github?"
     )
+
 owner, reponame = m[1], m[2]
 
 if owner == BASE_OWNER and reponame == BASE_REPONAME:
