@@ -34,29 +34,20 @@ jobs:
     - name: Check with fontbakery
       run: make test
       continue-on-error: true
-    - name: Generate proofs
+    - name: proof
       run: make proof
-    - name: Rearrange
-      run: |
-          mkdir for-gh-pages
-          mv fontbakery-report.md for-gh-pages
-          mv fontbakery-report.html for-gh-pages
-          mv badges for-gh-pages
-          git fetch --depth=1
-          mv proof/* for-gh-pages
-          git checkout -f gh-pages
-          cp -ar for-gh-pages/* .
-          rm -rf for-gh-pages
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      name: Commit to gh-pages
+    - name: setup site
+      run: cp scripts/index.html out/index.html
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
-        branch: gh-pages
-        file_pattern: fonts *.html badges
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
     - name: Archive artifacts
       uses: actions/upload-artifact@v2
       with:
         name: Artifacts
         path: |
           fonts
-          *.html
-          fontbakery-report.md
+          out

@@ -19,7 +19,7 @@ build: build.stamp sources/config.yaml $(SOURCES)
 venv: venv/touchfile
 
 build.stamp: venv .init.stamp
-	. venv/bin/activate; gftools builder sources/config.yaml && touch build.stamp
+	. venv/bin/activate; rm -rf fonts/; gftools builder sources/config.yaml && touch build.stamp
 
 .init.stamp: venv
 	. venv/bin/activate; python3 scripts/first-run.py
@@ -30,10 +30,10 @@ venv/touchfile: requirements.txt
 	touch venv/touchfile
 
 test: venv build.stamp
-	. venv/bin/activate; fontbakery check-googlefonts -l WARN --succinct --badges badges --html fontbakery-report.html --ghmarkdown fontbakery-report.md $(shell find fonts -type f)
+	. venv/bin/activate; mkdir -p out/ out/fontbakery; fontbakery check-googlefonts -l WARN --succinct --badges badges --html out/fontbakery/fontbakery-report.html --ghmarkdown out/fontbakery/fontbakery-report.md $(shell find fonts -type f)
 
 proof: venv build.stamp
-	. venv/bin/activate; gftools gen-html proof $(shell find fonts/ttf -type f) -o proof
+	. venv/bin/activate; mkdir -p out/ out/proof; gftools gen-html proof $(shell find fonts/ttf -type f) -o out/proof
 
 images: venv build.stamp $(DRAWBOT_OUTPUT)
 	git add documentation/*.png && git commit -m "Rebuild images" documentation/*.png
