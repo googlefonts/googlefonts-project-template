@@ -47,3 +47,6 @@ clean:
 
 update-ufr:
 	npx update-template https://github.com/googlefonts/Unified-Font-Repository/
+
+update:
+	pip install --upgrade $(dependency); pip freeze > requirements.txt

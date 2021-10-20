@@ -29,7 +29,7 @@ jobs:
       name: First-run setup
       if: github.repository != 'googlefonts/Unified-Font-Repository'
       with:
-        file_pattern: .init.stamp README.md
+        file_pattern: .init.stamp README.md requirements.txt
     - name: gen zip file name
       id: zip-name
       shell: bash
