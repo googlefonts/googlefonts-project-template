@@ -3,6 +3,9 @@ venv
 build.stamp
 proof
 fonts
+node_modules
+package-lock.json
+package.json
 
 # OS generated files #
 ######################
