@@ -3,6 +3,7 @@ venv
 build.stamp
 proof
 fonts
+node_modules
 
 # OS generated files #
 ######################
