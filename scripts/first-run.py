@@ -8,6 +8,7 @@ from sh import git
 import re
 import sys
 from urllib.parse import quote
+import subprocess
 
 BASE_OWNER = "googlefonts"
 BASE_REPONAME = "Unified-Font-Repository"
@@ -68,6 +69,8 @@ if owner == BASE_OWNER and reponame == BASE_REPONAME:
 # and badges about their own font, not ours! So any URLs need to be adjusted to
 # refer to the end user's repository.
 
+# We will also pin the dependencies so future builds are reproducible.
+
 readme = open("README.md").read()
 
 print(
@@ -89,6 +92,12 @@ readme = readme.replace(
 
 with open("README.md", "w") as fh:
     fh.write(readme)
+
+# Pin the dependencies
+print("Pinning dependencies")
+dependencies = subprocess.check_output(["pip", "freeze"])
+with open("requirements.txt", "wb") as dependency_file:
+    dependency_file.write(dependencies)
 
 # Finally, we add a "touch file" called ".init.stamp" to the repository which
 # prevents this first-run process from being run again.
