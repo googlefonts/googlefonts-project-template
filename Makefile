@@ -14,11 +14,11 @@ help:
 	@echo "  make images: Creates PNG specimen images in the documentation/ directory"
 	@echo
 
-build: build.stamp sources/config.yaml $(SOURCES)
+build: build.stamp
 
 venv: venv/touchfile
 
-build.stamp: venv .init.stamp
+build.stamp: venv .init.stamp sources/config.yaml $(SOURCES)
 	. venv/bin/activate; rm -rf fonts/; gftools builder sources/config.yaml && touch build.stamp
 
 .init.stamp: venv
