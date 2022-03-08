@@ -35,11 +35,11 @@ Unlike many open source distributors, Google Fonts is **curated**. Fonts shipped
 
 # My Font
 
-[![][Fontbakery]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery-report.html)
-[![][Universal]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery-report.html)
-[![][GF Profile]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery-report.html)
-[![][Outline Correctness]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery-report.html)
-[![][Shaping]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery-report.html)
+[![][Fontbakery]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery/fontbakery-report.html)
+[![][Universal]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery/fontbakery-report.html)
+[![][GF Profile]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery/fontbakery-report.html)
+[![][Outline Correctness]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery/fontbakery-report.html)
+[![][Shaping]](https://googlefonts.github.io/Unified-Font-Repository/fontbakery/fontbakery-report.html)
 
 [Fontbakery]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgooglefonts%2FUnified-Font-Repository%2Fgh-pages%2Fbadges%2Foverall.json
 [GF Profile]: https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fgooglefonts%2FUnified-Font-Repository%2Fgh-pages%2Fbadges%2FGoogleFonts.json
