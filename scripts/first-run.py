@@ -12,6 +12,7 @@ import subprocess
 
 BASE_OWNER = "googlefonts"
 BASE_REPONAME = "Unified-Font-Repository"
+DUMMY_URL = "https://yourname.github.io/your-font-repository-name"
 
 
 def repo_url(owner, name):
@@ -76,6 +77,7 @@ readme = open("README.md").read()
 print(
     "Fixing URLs:", web_url(BASE_OWNER, BASE_REPONAME), "->", web_url(owner, reponame)
 )
+
 readme = readme.replace(web_url(BASE_OWNER, BASE_REPONAME), web_url(owner, reponame))
 # In the badges, the URLs to raw.githubusercontent.com are URL-encoded as they
 # are passed to shields.io.
@@ -88,6 +90,17 @@ print(
 readme = readme.replace(
     quote(raw_url(BASE_OWNER, BASE_REPONAME), safe=""),
     quote(raw_url(owner, reponame), safe=""),
+)
+
+print(
+    "Fixing URLs:",
+    DUMMY_URL,
+    "->",
+    web_url(owner, reponame),
+)
+readme = readme.replace(
+    f"`{DUMMY_URL}`",
+    web_url(owner, reponame),
 )
 
 with open("README.md", "w") as fh:
