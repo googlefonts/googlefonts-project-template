@@ -15,16 +15,16 @@ Fontbakery version: 0.8.7
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
-	* uni05D2
-	* uni20B4
-	* uni04B7
-	* uni04EE
-	* uni04F2
-	* zero.zero and 51 more.
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni045E
+	* uni049A
+	* uni0525
+	* uni0423 and 51 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -47,15 +47,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -122,16 +122,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
 	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni05DE and 41 more.
+	* Euro
+	* uni04CB and 41 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -154,15 +154,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -224,16 +224,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
 	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni05DE and 48 more.
+	* Euro and 48 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -256,15 +256,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -325,11 +325,11 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
+	* Euro
+	* uni20AE
 	* uni20B4
-	* uni05B8
-	* Hbar
-	* uni20AE and Euro
+	* yen
+	* Hbar and uni05B8
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
 * [com.google.fonts/check/kerning_for_non_ligated_sequences](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/kerning_for_non_ligated_sequences)
 
@@ -350,15 +350,15 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -424,16 +424,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
-	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni05DE and 54 more.
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni045E
+	* uni049A
+	* uni0525
+	* uni04B9 and 54 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -456,15 +456,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -518,16 +518,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
-	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni05DE and 43 more.
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
+	* uni04B9
+	* uni05D2 and 43 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -550,15 +550,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -632,16 +632,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
-	* uni05D2
-	* uni20B4
-	* uni04B7
-	* uni04EE
-	* uni04F2
-	* zero.zero and 51 more.
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni045E
+	* uni049A
+	* uni0525
+	* uni0423 and 51 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -664,15 +664,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -744,16 +744,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni20B9
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
 	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni04E9
-	* uni05B8
-	* uni04A0 and 33 more.
+	* Euro
+	* uni04CB
+	* uni0493
+	* uni04A2
+	* uni0492 and 33 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -776,15 +776,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -844,16 +844,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni20B9
-	* uni20B4
-	* uni20B4.BRACKET.125
-	* uni04E9
-	* uni05B8
+	* uni049A
+	* Euro
+	* uni04A2
 	* Euro.BRACKET.125
-	* Hbar
+	* Ustraitstrokecy
+	* uni04E8
+	* uni20B9
 	* uni20AE
-	* uni0462 and 10 more.
+	* uni04E9
+	* uni20B4 and 10 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -876,15 +876,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -932,16 +932,16 @@ The following glyphs do not have the recommended number of contours:
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
 	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni04E9
-	* uni05B8 and 36 more.
+	* Euro
+	* uni04CB
+	* uni04A2 and 36 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -964,15 +964,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -1044,16 +1044,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni05EA
-	* uni20B9
 	* uniFB3E
-	* uni05D2
-	* uni20B4
-	* uni04B7
-	* uni04EE
-	* uni04F2
-	* zero.zero and 59 more.
+	* uniFB3C
+	* uni0498
+	* uni04B8
+	* uniFB32
+	* uni044E
+	* uni045E
+	* uni049A
+	* uni0525
+	* uni0423 and 59 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -1076,15 +1076,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -1145,16 +1145,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
-	* uni20B9
+	* uniFB32
+	* uni044E
+	* uni049A
+	* uni0525
 	* uni05D2
-	* uni20B4
-	* uni04B7
-	* zero.zero
-	* uni20B4.BRACKET.125
-	* uni04E9
-	* uni05B8
-	* hbar and 30 more.
+	* Euro
+	* uni04CB
+	* uni04A2
+	* uni0492
+	* Euro.BRACKET.125 and 30 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -1177,15 +1177,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -1257,16 +1257,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* Uring
-	* Iacute
-	* uni051D
-	* uni0411
-	* currency
-	* Hcircumflex
-	* guillemotright.case
-	* uni04C0
-	* yen
-	* Atilde and 665 more.
+	* Eacute
+	* uni0432
+	* uniFB3E
+	* uni041E
+	* uniFB3C
+	* uni0437
+	* Gdotaccent
+	* nine
+	* uni043A
+	* uni2079 and 665 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
@@ -1289,15 +1289,15 @@ Use -F or --full-lists to disable shortening of long lists.
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
@@ -1340,11 +1340,11 @@ The following glyphs do not have the recommended number of contours:
 * [com.google.fonts/check/production_glyphs_similarity](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity)
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* yen
+	* Euro
+	* uni20AE
 	* uni20B4
-	* uni05B8
-	* Hbar
-	* uni20AE and Euro
+	* yen
+	* Hbar and uni05B8
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences?</summary><div>
 * [com.google.fonts/check/kerning_for_non_ligated_sequences](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/googlefonts.html#com.google.fonts/check/kerning_for_non_ligated_sequences)
 
@@ -1365,15 +1365,15 @@ The following glyphs do not have the recommended number of contours:
 * [com.google.fonts/check/unreachable_glyphs](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/unreachable_glyphs)
 
 * ⚠ **WARN** The following glyphs could not be reached by codepoint or substitution rules:
-	- uni030C.alt
 	- parenleft.numerator
-	- parenright.numerator
-	- yen.BRACKET.125
 	- .null
-	- Euro.BRACKET.125
-	- parenright.denominator
-	- uni20B4.BRACKET.125 
-	- And parenleft.denominator
+	- uni20B4.BRACKET.125
+	- yen.BRACKET.125
+	- parenright.numerator
+	- uni030C.alt
+	- parenleft.denominator
+	- parenright.denominator 
+	- And Euro.BRACKET.125
  [code: unreachable-glyphs]
 </div></details><details><summary>⚠ <b>WARN:</b> Check if each glyph has the recommended amount of contours.</summary><div>
 * [com.google.fonts/check/contour_count](https://font-bakery.readthedocs.io/en/latest/fontbakery/profiles/universal.html#com.google.fonts/check/contour_count)
