@@ -1,0 +1,159 @@
+name: Test and release
+
+on: push
+
+env:
+  GH_TOKEN: ${{ SECRETS.GITHUB_TOKEN }}
+
+jobs:
+  check:
+    name: Has version been incremented?
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.bumpchecker.outputs.result }}
+      newtag: ${{ steps.bumpchecker.outputs.newtag }}
+      is_gf: ${{ steps.gfchecker.outputs.is_gf }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: pip3 install 'git+https://github.com/googlefonts/gftools#egg=gftools'
+      - id: bumpchecker
+        name: Check if version has bumped
+        run: python3 -m gftools.actions.checkversionbump
+      - id: gfchecker
+        name: Check if this font should be submitted to Google Fonts
+        run: python3 -m gftools.actions.checkgooglefonts
+
+
+  test_and_release:
+    runs-on: ubuntu-latest
+    name: Run fontbakery and release
+    needs: check
+    if: needs.check.outputs.result == 'untagged'
+    outputs:
+      url: ${{ steps.upload.outputs.browser_download_url }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install sys tools/deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install ttfautohint
+      - uses: actions/cache@v2
+        with:
+          path: ./venv/
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-venv-
+      - run: pip3 install 'git+https://github.com/googlefonts/gftools#egg=gftools'
+      - name: gen zip file name
+        id: zip-name
+        shell: bash
+        # Set the archive name to repo name e.g "MavenPro". We will add the tag later.
+        run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      - name: Build font
+        run: make build
+      - name: Check with fontbakery
+        id: fontbakery
+        run: make test
+        continue-on-error: true
+      - name: Tag release
+        if: steps.fontbakery.outcome == 'success'
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ needs.check.outputs.newtag }}
+          create_annotated_tag: true
+          tag_prefix: ""
+      - name: Report failure if there was one
+        if: steps.fontbakery.outcome == 'failure'
+        run: python3 -m gftools.actions.qa2issue ${{ needs.check.outputs.newtag }} out/fontbakery/fontbakery-report.md ; exit 1
+      - name: Create release
+        id: release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.check.outputs.newtag }}
+          release_name: ${{ needs.check.outputs.newtag }}
+      - name: Tell user about release
+        run: echo '::notice file=sources/config.yaml,title=A new release ${{ needs.check.outputs.newtag }} has been created'
+      - name: Create release bundle
+        run: zip -r ${{ env.ZIP_NAME }}.zip fonts/ README.md *.txt DESCRIPTION.en_us.html
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        id: upload
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{ env.ZIP_NAME }}.zip
+          asset_name: ${{ env.ZIP_NAME }}-${{ needs.check.outputs.newtag }}.zip
+          tag: ${{ needs.check.outputs.newtag }}
+          overwrite: true
+          body: "Production ready fonts"
+
+  google_fonts_pr:
+    runs-on: ubuntu-latest
+    environment: googlefonts
+    name: Submit release to Google Fonts
+    needs:
+      - check
+      - test_and_release
+    if: needs.check.outputs.is_gf == 'true' && needs.test_and_release.outputs.url
+    steps:
+      - name: Check SSH_KEY is set
+        run: |
+          if [[ "${{ secrets.SSH_KEY }}" == "" ]];
+          then
+            echo "::error file=sources/config.yaml,title=SSH_KEY was not set in repository secrets::Generate an SSH key (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key), add the public key to your GitHub account (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) and add the private key to an environment secret called SSH_KEY in an environment called 'googlefonts' by going to $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/settings/secrets/actions";
+            exit 1
+          fi
+      - name: Check USER_GITHUB_TOKEN is set
+        run: |
+          if [[ "${{ secrets.USER_GITHUB_TOKEN }}" == "" ]];
+          then
+            echo "::error file=sources/config.yaml,title=USER_GITHUB_TOKEN was not set in repository secrets::Generate a personal access token with a repo scope by visiting https://github.com/settings/tokens/new and add it to an environment secret called USER_GITHUB_TOKEN in an environment called 'googlefonts' by going to $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/settings/secrets/actions";
+            exit 1
+          fi
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - run: pip3 install 'git+https://github.com/googlefonts/gftools#egg=gftools'
+      - name: Generate / update upstream.yaml
+        run: python3 -m gftools.actions.updateupstream ${{ needs.test_and_release.outputs.url }}
+      - name: Commit upstream.yaml if needed
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: upstream.yaml
+      - uses: actions/checkout@v2
+        name: Check out Google Fonts repository
+        with:
+          fetch-depth: 0
+          repository: google/fonts
+          path: "googlefonts"
+          ssh-key:  ${{ secrets.SSH_KEY }}
+      - name: Set git username and email
+        run: |
+          git config --global user.email "${GH_USERNAME}@users.noreply.github.com"
+          git config --global user.name "${GH_USERNAME}"
+        env:
+          GH_USERNAME: ${{ github.actor }}
+      - name: Do SSH magic
+        run: cd googlefonts; git remote add googlefonts git@github.com:google/fonts.git ; cd ..
+      - name: Test fetch
+        run: cd googlefonts; git fetch googlefonts main ; cd ..
+      - name: Run the packager
+        run: gftools packager upstream.yaml googlefonts -p -y
+        env:
+          GH_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
+

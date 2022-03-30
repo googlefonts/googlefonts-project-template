@@ -1,6 +1,10 @@
 name: Build font and specimen
 
-on: [push, release]
+on:
+  push:
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -35,18 +39,6 @@ jobs:
       shell: bash
       # Set the archive name to repo name + "-assets" e.g "MavenPro-assets"
       run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
-      # If a new release is cut, use the release tag to auto-bump the source files
-    - name: Bump release
-      if: github.event_name == 'release'
-      run: |
-        . venv/bin/activate
-        SRCS=$(yq e ".sources[]" sources/config.yaml)
-        TAG_NAME=${GITHUB_REF/refs\/tags\//}
-        echo "Bumping $SRCS to $TAG_NAME"
-        for src in $SRCS
-        do
-          bumpfontversion sources/$src --new-version $TAG_NAME;
-        done
     - name: Build font
       run: make build
     - name: Check with fontbakery
@@ -71,30 +63,3 @@ jobs:
           out
     outputs:
       zip_name: ${{ env.ZIP_NAME }}
-  release:
-    # only run if the commit is tagged...
-    if: github.event_name == 'release'
-    # ... and it builds successfully
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    env:
-      ZIP_NAME: ${{ needs.build.outputs.zip_name }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download artefact files
-        uses: actions/download-artifact@v2
-        with:
-          name: ${{ env.ZIP_NAME }}
-          path: ${{ env.ZIP_NAME }}
-      - name: Zip files
-        run: zip -r ${{ env.ZIP_NAME }}.zip ${{ env.ZIP_NAME }}
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ env.ZIP_NAME }}.zip
-          asset_name: ${{ env.ZIP_NAME }}.zip
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "Production ready fonts"
