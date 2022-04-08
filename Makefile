@@ -3,6 +3,9 @@ FAMILY=$(shell python3 scripts/read-config.py --family )
 DRAWBOT_SCRIPTS=$(shell ls documentation/*.py)
 DRAWBOT_OUTPUT=$(shell ls documentation/*.py | sed 's/\.py/.png/g')
 
+# https://www.gnu.org/software/make/manual/html_node/One-Shell.html
+.ONESHELL:
+
 help:
 	@echo "###"
 	@echo "# Build targets for $(FAMILY)"
@@ -19,21 +22,27 @@ build: build.stamp
 venv: venv/touchfile
 
 build.stamp: venv .init.stamp sources/config.yaml $(SOURCES)
-	. venv/bin/activate; rm -rf fonts/; gftools builder sources/config.yaml && touch build.stamp
+	. venv/bin/activate; rm -rf fonts/
+	gftools builder sources/config.yaml && touch build.stamp
 
 .init.stamp: venv
-	. venv/bin/activate; python3 scripts/first-run.py
+	. venv/bin/activate
+	python3 scripts/first-run.py
 
 venv/touchfile: requirements.txt
 	test -d venv || python3 -m venv venv
-	. venv/bin/activate; pip install -Ur requirements.txt
+	. venv/bin/activate
+	pip install -Ur requirements.txt
 	touch venv/touchfile
 
 test: venv build.stamp
-	. venv/bin/activate; mkdir -p out/ out/fontbakery; fontbakery check-googlefonts -l WARN --succinct --badges out/badges --html out/fontbakery/fontbakery-report.html --ghmarkdown out/fontbakery/fontbakery-report.md $(shell find fonts/ttf -type f)
+	. venv/bin/activate
+	mkdir -p out/ out/fontbakery
+	fontbakery check-googlefonts -l WARN --succinct --badges out/badges --html out/fontbakery/fontbakery-report.html --ghmarkdown out/fontbakery/fontbakery-report.md $(shell find fonts/ttf -type f)
 
 proof: venv build.stamp
-	. venv/bin/activate; mkdir -p out/ out/proof; gftools gen-html proof $(shell find fonts/ttf -type f) -o out/proof
+	. venv/bin/activate; mkdir -p out/ out/proof
+	gftools gen-html proof $(shell find fonts/ttf -type f) -o out/proof
 
 images: venv build.stamp $(DRAWBOT_OUTPUT)
 	git add documentation/*.png && git commit -m "Rebuild images" documentation/*.png
@@ -43,10 +52,11 @@ images: venv build.stamp $(DRAWBOT_OUTPUT)
 
 clean:
 	rm -rf venv
-	find . -name "*.pyc" | xargs rm delete
+	find . -name "*.pyc" | xargs -r rm
 
 update-ufr:
 	npx update-template https://github.com/googlefonts/Unified-Font-Repository/
 
 update:
-	pip install --upgrade $(dependency); pip freeze > requirements.txt
+	pip install --upgrade $(dependency)
+	pip freeze > requirements.txt
