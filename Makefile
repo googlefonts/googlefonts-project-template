@@ -45,8 +45,8 @@ clean:
 	rm -rf venv
 	find . -name "*.pyc" | xargs rm delete
 
-update-ufr:
-	npx update-template https://github.com/googlefonts/Unified-Font-Repository/
+update-project-template:
+	npx update-template https://github.com/googlefonts/googlefonts-project-template/
 
 update:
 	pip install --upgrade $(dependency); pip freeze > requirements.txt
