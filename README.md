@@ -4,9 +4,7 @@
 
 * **New repositories.** Hit the green button above ("Use this template") to create your own repository. Please note that a Github Action job will be executed once you've created the repository which will populate the readme. This may take a few minutes. Please wait for this job to complete before pulling the repo to your local system.*
 
-* **Updating a repository.** To update your font repository to bring in the latest best-practices from
-our Unified Font Repository, run `make update-ufr` from the command line.
-
+* **Updating a repository.** To update your font repository to bring in the latest best-practices from the Google Fonts Project Template, run `make update-project-template` from the command line.
 
 * Replace the font sources in the `sources` directory with your own font sources. These sources may be either in Glyphs format or UFO/Designspace formats.\
 \
