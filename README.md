@@ -2,7 +2,9 @@
 
 ## Setting up your font
 
-* **New repositories.** Hit the green button above ("Use this template") to create your own repository. Please note that a Github Action job will be executed once you've created the repository which will populate the readme. This may take a few minutes. Please wait for this job to complete before pulling the repo to your local system.*
+* **New repositories.** Hit the green button above ("Use this template") to create your own repository. We then need to update the workflow permissions. Go to Settings > Actions > General > Workflow permissions and enable "Read and write permissions". Finally, rerun the failed github action by going to Actions > Initial commit > Re-run jobs > Re-run all jobs.
+
+*Please note that a Github Action job will be executed once you've created the repository which will populate the readme and build dependencies. This job will fail because it was executed with incorrect permissions. The steps above will fix the permissions issue and rerun the job. Please wait for the job to complete and pass before pulling the repo to your local system.*
 
 * **Updating a repository.** To update your font repository to bring in the latest best-practices from the Google Fonts Project Template, run `make update-project-template` from the command line.
 
