@@ -481,7 +481,7 @@
     }));
     
 	// break text so that no reflow happens
-	async function breakText() {
+async function breakText() {
 	boxContent = document.getElementsByClassName("box-text")
 	for (let box of boxContent) {
 		switchFonts()
@@ -491,7 +491,7 @@
 		await sleep(1)
 		break2 = getLineBreaks(box)
 
-		if (break1.length > break2.length) {
+		if (break1.length >= break2.length) {
 		breaks = break1
 		} else {
 		breaks = break2
@@ -502,7 +502,7 @@
 	}
 	}
 
-	function getLineBreaks(elem) {
+function getLineBreaks(elem) {
 	const nodes = grabTextNodes(elem);
 	for (const node of nodes) { // each node is a big block of text
 		let rangeIndex = 1;
@@ -511,37 +511,37 @@
 		const textLength = nodeText.length;
 
 		linebreaks = []
-		prevLeft = 0;
+		prevTop = 0;
 		while (rangeIndex <= textLength) {
-		const range = document.createRange();
-		range.setStart(node, rangeIndex-1);
-		range.setEnd(node, rangeIndex)
-		currentLeft = range.getBoundingClientRect().left
-		if (currentLeft < prevLeft) {
+			const range = document.createRange();
+			range.setStart(node, rangeIndex-1);
+			range.setEnd(node, rangeIndex)
+			currentTop = range.getBoundingClientRect().top
+		if (currentTop > prevTop) {
 			linebreaks.push(rangeIndex-2)
 		}
 		rangeIndex += 1;
-		prevLeft = currentLeft
+		prevTop = currentTop
 		}
 	}
 	return linebreaks
-	}
+}
 
-	function grabTextNodes(elem) {
+function grabTextNodes(elem) {
 	const walker = document.createTreeWalker(elem, NodeFilter.SHOW_TEXT, null);
 	const nodes = [];
 	while (walker.nextNode()) {
 		nodes.push(walker.currentNode);
 	}
 	return nodes;
-	}
+}
 
 	function sleep(ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
-	}
+}
 
 
-	function insertBreaks(node, breaks) {
+function insertBreaks(node, breaks) {
 	console.log(node, breaks)
 	newText = ""
 	currentText = node.textContent
@@ -553,11 +553,11 @@
 		}
 	}
 	node.innerHTML = newText
-	}
+}
 
 	if (fontToggle !== null) {
 		breakText()
-	}
+}
 
 	
 
