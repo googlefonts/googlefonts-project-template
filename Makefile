@@ -57,5 +57,7 @@ update-project-template:
 
 update: venv
 	venv/bin/pip install --upgrade pip-tools
+	# See https://pip-tools.readthedocs.io/en/latest/#a-note-on-resolvers for
+	# the `--resolver` flag below.
 	venv/bin/pip-compile --upgrade --resolver=backtracking requirements.in
 	venv/bin/pip-sync requirements.txt
