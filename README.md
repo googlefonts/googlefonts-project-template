@@ -16,7 +16,7 @@ Unlike many open source distributors, Google Fonts is **curated**. Fonts shipped
 
 * Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Fonts Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
-* `CustomFilter_GFLatinCore.plist` in `sources` is practical if you use GlyphsApp, you can remove it otherwise. Placed in the same directory as the youe `.glyphs` file will allow to display a filter list for a certain glyphset in app, to make sure your font supports the minimal set required by Google Fonts. Find other list formats and other glyphsets for other softwares in [GF Glyphsets repository](https://github.com/googlefonts/glyphsets/tree/main/GF_glyphsets).
+* `CustomFilter_GFLatinCore.plist` in `sources` is practical if you use GlyphsApp, you can remove it otherwise. Placed in the same directory as the your `.glyphs` file will allow to display a filter list for a certain glyphset in app, to make sure your font supports the minimal set required by Google Fonts. Find other and other glyphsets and list formats for different softwares in [GF Glyphsets repository](https://github.com/googlefonts/glyphsets/tree/main/GF_glyphsets).
 
 * Add yourself to the `AUTHORS.txt` and `CONTRIBUTORS.txt` files.
 
