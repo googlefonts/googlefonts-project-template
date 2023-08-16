@@ -44,7 +44,7 @@ images: venv build.stamp $(DRAWBOT_OUTPUT)
 
 clean:
 	rm -rf venv
-	find . -name "*.pyc" | xargs rm delete
+	find . -name "*.pyc" -delete
 
 update-project-template:
 	npx update-template https://github.com/googlefonts/googlefonts-project-template/
