@@ -2846,7 +2846,7 @@ Width = 570:
 equal
 
 Width = 576:
-multiply, logicalnot
+logicalnot, multiply
 
 Width = 562:
 plusminus
