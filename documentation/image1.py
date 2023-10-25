@@ -15,16 +15,18 @@ import sys
 import argparse
 
 # Constants, these are the main "settings" for the image
-WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 2048, 128, 1
+WIDTH, HEIGHT, MARGIN, FRAMES = 2048, 1024, 128, 1
 FONT_PATH = "fonts/ttf/Rubik-Regular.ttf"
 FONT_LICENSE = "OFL v1.1"
 AUXILIARY_FONT = "Helvetica"
 AUXILIARY_FONT_SIZE = 48
-BIG_TEXT = "Aa"
-BIG_TEXT_FONT_SIZE = 1024
-BIG_TEXT_SIDE_MARGIN = MARGIN * 3.1
-BIG_TEXT_BOTTOM_MARGIN = MARGIN * 5.5
-GRID_VIEW = False # Change this to "True" for a grid overlay
+
+BIG_TEXT = "AaBb"
+BIG_TEXT_FONT_SIZE = 730
+BIG_TEXT_SIDE_MARGIN = MARGIN * 1
+BIG_TEXT_BOTTOM_MARGIN = MARGIN * 2
+
+GRID_VIEW = False # Toggle this for a grid overlay
 
 # Handel the "--output" flag
 # For example: $ python3 documentation/image1.py --output documentation/image1.png
@@ -98,9 +100,9 @@ def draw_main_text():
 # Divider lines
 def draw_divider_lines():
     stroke(1)
-    strokeWidth(4)
+    strokeWidth(5)
     lineCap("round")
-    line((MARGIN, HEIGHT - MARGIN), (WIDTH - MARGIN, HEIGHT - MARGIN))
+    line((MARGIN, HEIGHT - (MARGIN * 1.5)), (WIDTH - MARGIN, HEIGHT - (MARGIN * 1.5)))
     line((MARGIN, MARGIN + (MARGIN / 2)), (WIDTH - MARGIN, MARGIN + (MARGIN / 2)))
     stroke(None)
 
@@ -110,8 +112,8 @@ def draw_auxiliary_text():
     # Setup
     font(AUXILIARY_FONT)
     fontSize(AUXILIARY_FONT_SIZE)
-    POS_TOP_LEFT = (MARGIN, HEIGHT - MARGIN * 1.5)
-    POS_TOP_RIGHT = (WIDTH - MARGIN, HEIGHT - MARGIN * 1.5)
+    POS_TOP_LEFT = (MARGIN, HEIGHT - MARGIN * 1.25)
+    POS_TOP_RIGHT = (WIDTH - MARGIN, HEIGHT - MARGIN * 1.25)
     POS_BOTTOM_LEFT = (MARGIN, MARGIN)
     POS_BOTTOM_RIGHT = (WIDTH - MARGIN * 0.95, MARGIN)
     URL_AND_HASH = MY_URL + "at commit " + MY_HASH
