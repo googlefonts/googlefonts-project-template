@@ -32,7 +32,7 @@ for line in data.splitlines():
 		toggle = True
 		continue
 	if toggle:
-		m = re.match(r"^\s+-\s*(.*)", line)
+		m = re.match(r"^\s*-\s*(.*)", line)
 		if m:
 			sources.append("sources/"+m[1])
 		else:
