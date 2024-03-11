@@ -1,6 +1,9 @@
 name: Build font and specimen
 
-on: [push, release]
+on:
+  push:
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -65,10 +68,15 @@ jobs:
           out
     outputs:
       zip_name: ${{ env.ZIP_NAME }}
+
+  # When the user triggers a release (either from a tag or from the GitHub UI),
+  # we want to create a release bundle containing the built fonts, plus
+  # license and description (and article, if there is one), and then attach
+  # that to the release.
+  # Github produces three actions runs on release: released, created, and published.
+  # We need to hook into "published"
   release:
-    # only run if the commit is tagged...
     if: github.event_name == 'release'
-    # ... and it builds successfully
     needs:
       - build
     runs-on: ubuntu-latest
@@ -76,19 +84,32 @@ jobs:
       ZIP_NAME: ${{ needs.build.outputs.zip_name }}
     steps:
       - uses: actions/checkout@v2
-      - name: Download artefact files
+      - name: Download font artefact files
         uses: actions/download-artifact@v2
         with:
           name: ${{ env.ZIP_NAME }}
           path: ${{ env.ZIP_NAME }}
-      - name: Zip files
-        run: zip -r ${{ env.ZIP_NAME }}.zip ${{ env.ZIP_NAME }}
+      - name: Copy DESCRIPTION.en_us.html to artefact directory
+        run: cp documentation/DESCRIPTION.en_us.html ${{ env.ZIP_NAME }}/DESCRIPTION.en_us.html
+      - name: Copy ARTICLE.en_us.html to artefact directory
+        run: cp documentation/ARTICLE.en_us.html ${{ env.ZIP_NAME }}/ARTICLE.en_us.html
+        continue-on-error: true
+      - name: Copy OFL.txt to artefact directory
+        run: cp OFL.txt ${{ env.ZIP_NAME }}/OFL.txt
+      - name: Remove proof/fontbakery stuff from release
+        run: run -rf ${{ env.ZIP_NAME }}/out
+      - name: gen release file name
+        id: release-name
+        shell: bash
+        # Set the archive name to repo name + "-" + release tag name e.g "MavenPro-v1.234"
+        run: echo "RELEASE_ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-${{github.event.release.tag_name}}" >> $GITHUB_ENV 
+      - name: Create release bundle
+        run: mv ${{ env.ZIP_NAME }} ${{ env.RELEASE_ZIP_NAME }}; zip -r ${{ env.RELEASE_ZIP_NAME }}.zip ${{ env.RELEASE_ZIP_NAME }}
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ env.ZIP_NAME }}.zip
-          asset_name: ${{ env.ZIP_NAME }}.zip
+          file: ${{ env.RELEASE_ZIP_NAME }}.zip
+          asset_name: ${{ env.RELEASE_ZIP_NAME }}.zip
           tag: ${{ github.ref }}
           overwrite: true
-          body: "Production ready fonts"
