@@ -1,4 +1,4 @@
-fontmake>=2.4
+fontmake>=2.4.2
 gftools[qa]>=0.9.23
 drawbot-skia>=0.4.8
 sh>=1.14.2
