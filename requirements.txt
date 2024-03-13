@@ -3,5 +3,5 @@ gftools[qa]>=0.9.51
 drawbot-skia>=0.4.8
 sh>=1.14.2
 bumpfontversion>=0.2.0
-diffenator2>=0.2.5
+diffenator2>=0.3.8
 
