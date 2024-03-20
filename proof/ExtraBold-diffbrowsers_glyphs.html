@@ -146,14 +146,6 @@
 
 	  
 	    @font-face{
-    src: url(Rubik-ExtraBold.ttf);
-    font-family: "Rubik";
-    font-weight: 800;
-    
-    font-style: normal;
-}
-	  
-	    @font-face{
     src: url(Rubik-ExtraBoldItalic.ttf);
     font-family: "Rubik";
     font-weight: 800;
@@ -161,25 +153,33 @@
     font-style: italic;
 }
 	  
-
-	  
-
-	  
-
-	  
-	    .ExtraBold{
-    font-family: "Rubik", "Adobe NotDef";
+	    @font-face{
+    src: url(Rubik-ExtraBold.ttf);
+    font-family: "Rubik";
     font-weight: 800;
     
     font-style: normal;
-    font-variation-settings: "wght" 800;
 }
+	  
+
+	  
+
+	  
+
 	  
 	    .ExtraBold-Italic{
     font-family: "Rubik", "Adobe NotDef";
     font-weight: 800;
     
     font-style: italic;
+    font-variation-settings: "wght" 800;
+}
+	  
+	    .ExtraBold{
+    font-family: "Rubik", "Adobe NotDef";
+    font-weight: 800;
+    
+    font-style: normal;
     font-variation-settings: "wght" 800;
 }
 	  
@@ -222,8 +222,8 @@
 	
   
       <div class="box">
-	<div class="box-title">ExtraBold 20pt</div>
-	  <span class="box-text ExtraBold" style="font-size: 20pt">
+	<div class="box-title">ExtraBold-Italic 20pt</div>
+	  <span class="box-text ExtraBold-Italic" style="font-size: 20pt">
 	    
 	      <div class="cell"></div>
 	    
@@ -1615,8 +1615,8 @@
        </div>
     
       <div class="box">
-	<div class="box-title">ExtraBold-Italic 20pt</div>
-	  <span class="box-text ExtraBold-Italic" style="font-size: 20pt">
+	<div class="box-title">ExtraBold 20pt</div>
+	  <span class="box-text ExtraBold" style="font-size: 20pt">
 	    
 	      <div class="cell"></div>
 	    

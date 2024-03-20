@@ -146,14 +146,6 @@
 
 	  
 	    @font-face{
-    src: url(Rubik-Light.ttf);
-    font-family: "Rubik";
-    font-weight: 300;
-    
-    font-style: normal;
-}
-	  
-	    @font-face{
     src: url(Rubik-LightItalic.ttf);
     font-family: "Rubik";
     font-weight: 300;
@@ -161,25 +153,33 @@
     font-style: italic;
 }
 	  
-
-	  
-
-	  
-
-	  
-	    .Light{
-    font-family: "Rubik", "Adobe NotDef";
+	    @font-face{
+    src: url(Rubik-Light.ttf);
+    font-family: "Rubik";
     font-weight: 300;
     
     font-style: normal;
-    font-variation-settings: "wght" 300;
 }
+	  
+
+	  
+
+	  
+
 	  
 	    .Light-Italic{
     font-family: "Rubik", "Adobe NotDef";
     font-weight: 300;
     
     font-style: italic;
+    font-variation-settings: "wght" 300;
+}
+	  
+	    .Light{
+    font-family: "Rubik", "Adobe NotDef";
+    font-weight: 300;
+    
+    font-style: normal;
     font-variation-settings: "wght" 300;
 }
 	  
@@ -222,8 +222,8 @@
 	
   
       <div class="box">
-	<div class="box-title">Light 20pt</div>
-	  <span class="box-text Light" style="font-size: 20pt">
+	<div class="box-title">Light-Italic 20pt</div>
+	  <span class="box-text Light-Italic" style="font-size: 20pt">
 	    
 	      <div class="cell"></div>
 	    
@@ -1615,8 +1615,8 @@
        </div>
     
       <div class="box">
-	<div class="box-title">Light-Italic 20pt</div>
-	  <span class="box-text Light-Italic" style="font-size: 20pt">
+	<div class="box-title">Light 20pt</div>
+	  <span class="box-text Light" style="font-size: 20pt">
 	    
 	      <div class="cell"></div>
 	    
