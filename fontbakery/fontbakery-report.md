@@ -2,7 +2,7 @@
 
 fontbakery version: 0.11.2
 
-<h2>Check results</h2><details><summary><b>[14] Rubik[wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check license file has good copyright string. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_copyright">com.google.fonts/check/license/OFL_copyright</a>)</summary><div>
+<h2>Check results</h2><details><summary><b>[12] Rubik[wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check license file has good copyright string. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_copyright">com.google.fonts/check/license/OFL_copyright</a>)</summary><div>
 
 
 * 🔥 **FAIL** First line in license file is:
@@ -12,11 +12,6 @@ fontbakery version: 0.11.2
 which does not match the expected format, similar to:
 
 "Copyright 2022 The Familyname Project Authors (git url)" [code: bad-format]
-</div></details><details><summary>🔥 <b>FAIL:</b> Version number has increased since previous release on Google Fonts? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/version_bump">com.google.fonts/check/version_bump</a>)</summary><div>
-
-
-* 🔥 **FAIL** Version number 2.104 is less than on **Google Fonts** (2.300).
-* 🔥 **FAIL** Version number 2.104 is less than on google/fonts **GitHub repo** (2.300).
 </div></details><details><summary>⚠ <b>WARN:</b> Checking OS/2 achVendID. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vendor_id">com.google.fonts/check/vendor_id</a>)</summary><div>
 
 
@@ -31,14 +26,14 @@ which does not match the expected format, similar to:
     subset declarations to METADATA.pb, or by editing the glyphset
     definitions.
 
- * U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi
- * U+02D8 BREVE: try adding one of: canadian-aboriginal, yi
- * U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi
- * U+02DB OGONEK: try adding one of: canadian-aboriginal, yi
+ * U+02C7 CARON: try adding one of: tifinagh, yi, canadian-aboriginal
+ * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
+ * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
+ * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
  * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, coptic, math, tifinagh
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, math, coptic
  * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
- * U+0307 COMBINING DOT ABOVE: try adding one of: math, tifinagh, canadian-aboriginal, syriac, coptic, malayalam, old-permic, tai-le
+ * U+0307 COMBINING DOT ABOVE: try adding one of: tifinagh, old-permic, coptic, syriac, tai-le, math, malayalam, canadian-aboriginal
  * U+030A COMBINING RING ABOVE: try adding syriac
  * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
  * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
@@ -89,678 +84,11 @@ which does not match the expected format, similar to:
  * U+2260 NOT EQUAL TO: try adding math
  * U+2264 LESS-THAN OR EQUAL TO: try adding math
  * U+2265 GREATER-THAN OR EQUAL TO: try adding math
- * U+25CA LOZENGE: try adding one of: math, symbols
+ * U+25CA LOZENGE: try adding one of: symbols, math
  * U+FB01 LATIN SMALL LIGATURE FI: not included in any glyphset definition
  * U+FB02 LATIN SMALL LIGATURE FL: not included in any glyphset definition
 
 Or you can add the above codepoints to one of the subsets supported by the font: `cyrillic`, `cyrillic-ext`, `greek-ext`, `hebrew`, `latin`, `latin-ext` [code: unreachable-subsetting]
-</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
-
-
-* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* A
-	* AE
-	* AEacute
-	* Aacute
-	* Abreve
-	* Acircumflex
-	* Adieresis
-	* Agrave
-	* Amacron
-	* Aogonek
-	* Aring
-	* Atilde
-	* B
-	* C
-	* Cacute
-	* Ccaron
-	* Ccedilla
-	* Ccircumflex
-	* Cdotaccent
-	* D
-	* Dcaron
-	* Dcroat
-	* E
-	* Eacute
-	* Ebreve
-	* Ecaron
-	* Ecircumflex
-	* Edieresis
-	* Edotaccent
-	* Egrave
-	* Emacron
-	* Eng
-	* Eogonek
-	* Eth
-	* Euro
-	* F
-	* G
-	* Gbreve
-	* Gcircumflex
-	* Gdotaccent
-	* H
-	* Hbar
-	* Hcircumflex
-	* I
-	* IJ
-	* Iacute
-	* Ibreve
-	* Icircumflex
-	* Idieresis
-	* Idotaccent
-	* Igrave
-	* Imacron
-	* Iogonek
-	* Itilde
-	* J
-	* Jcircumflex
-	* K
-	* L
-	* Lacute
-	* Lcaron
-	* Ldot
-	* Lslash
-	* M
-	* N
-	* Nacute
-	* Ncaron
-	* Ntilde
-	* O
-	* OE
-	* Oacute
-	* Obreve
-	* Ocircumflex
-	* Odieresis
-	* Ograve
-	* Ohungarumlaut
-	* Omacron
-	* Oslash
-	* Oslashacute
-	* Otilde
-	* P
-	* Q
-	* R
-	* Racute
-	* Rcaron
-	* S
-	* Sacute
-	* Scaron
-	* Scedilla
-	* Scircumflex
-	* T
-	* Tbar
-	* Tcaron
-	* Thorn
-	* U
-	* Uacute
-	* Ubreve
-	* Ucircumflex
-	* Udieresis
-	* Ugrave
-	* Uhungarumlaut
-	* Umacron
-	* Uogonek
-	* Uring
-	* Utilde
-	* V
-	* W
-	* Wacute
-	* Wcircumflex
-	* Wdieresis
-	* Wgrave
-	* X
-	* Y
-	* Yacute
-	* Ycircumflex
-	* Ydieresis
-	* Ygrave
-	* Z
-	* Zacute
-	* Zcaron
-	* Zdotaccent
-	* a
-	* aacute
-	* abreve
-	* acircumflex
-	* adieresis
-	* ae
-	* aeacute
-	* agrave
-	* amacron
-	* ampersand
-	* aogonek
-	* approxequal
-	* approxequal.case
-	* aring
-	* asciitilde
-	* asciitilde.case
-	* asterisk
-	* at
-	* at.case
-	* atilde
-	* b
-	* backslash
-	* bar
-	* braceleft
-	* braceleft.case
-	* braceright
-	* braceright.case
-	* bracketleft
-	* bracketleft.case
-	* bracketright
-	* bracketright.case
-	* brokenbar
-	* c
-	* cacute
-	* ccaron
-	* ccedilla
-	* ccircumflex
-	* cdotaccent
-	* cent
-	* colon
-	* copyright
-	* currency
-	* d
-	* dagger
-	* daggerdbl
-	* dcaron
-	* dcroat
-	* degree
-	* divide
-	* divide.case
-	* dollar
-	* dotlessi
-	* e
-	* eacute
-	* ebreve
-	* ecaron
-	* ecircumflex
-	* edieresis
-	* edotaccent
-	* egrave
-	* eight
-	* eight.dnom
-	* eight.numr
-	* eight.tf
-	* ellipsis
-	* emacron
-	* emdash
-	* emdash.case
-	* endash
-	* endash.case
-	* eng
-	* eogonek
-	* equal
-	* equal.case
-	* estimated
-	* eth
-	* exclam
-	* exclamdown
-	* f
-	* f_f
-	* f_f_i
-	* f_f_l
-	* fi
-	* five
-	* five.dnom
-	* five.numr
-	* five.tf
-	* fiveeighths
-	* fl
-	* florin
-	* four
-	* four.dnom
-	* four.numr
-	* four.tf
-	* fraction
-	* g
-	* gbreve
-	* gcircumflex
-	* gdotaccent
-	* germandbls
-	* greater
-	* greaterequal
-	* guillemotleft
-	* guillemotleft.case
-	* guillemotright
-	* guillemotright.case
-	* guilsinglleft
-	* guilsinglleft.case
-	* guilsinglright
-	* guilsinglright.case
-	* h
-	* hbar
-	* hcircumflex
-	* hyphen
-	* hyphen.case
-	* i
-	* iacute
-	* ibreve
-	* icircumflex
-	* idieresis
-	* igrave
-	* ij
-	* imacron
-	* infinity
-	* integral
-	* iogonek
-	* itilde
-	* j
-	* jcircumflex
-	* k
-	* kgreenlandic
-	* l
-	* lacute
-	* lcaron
-	* ldot
-	* less
-	* lessequal
-	* logicalnot
-	* longs
-	* lozenge
-	* lslash
-	* m
-	* minus
-	* minus.case
-	* multiply
-	* multiply.case
-	* n
-	* nacute
-	* napostrophe
-	* ncaron
-	* nine
-	* nine.dnom
-	* nine.numr
-	* nine.tf
-	* notequal
-	* notequal.case
-	* ntilde
-	* numbersign
-	* o
-	* oacute
-	* obreve
-	* ocircumflex
-	* odieresis
-	* oe
-	* ograve
-	* ohungarumlaut
-	* omacron
-	* one
-	* one.tf
-	* oneeighth
-	* onehalf
-	* onequarter
-	* oslash
-	* oslashacute
-	* otilde
-	* p
-	* paragraph
-	* parenleft
-	* parenleft.case
-	* parenleft.tf
-	* parenright
-	* parenright.case
-	* parenright.tf
-	* partialdiff
-	* percent
-	* perthousand
-	* plus
-	* plus.case
-	* plusminus
-	* product
-	* q
-	* question
-	* questiondown
-	* quotedbl
-	* quotedblbase
-	* quotedblleft
-	* quotedblright
-	* r
-	* racute
-	* radical
-	* rcaron
-	* registered
-	* s
-	* sacute
-	* scaron
-	* scedilla
-	* scircumflex
-	* section
-	* semicolon
-	* seven
-	* seven.tf
-	* seveneighths
-	* six
-	* six.tf
-	* slash
-	* sterling
-	* summation
-	* t
-	* tbar
-	* tcaron
-	* thorn
-	* three
-	* three.tf
-	* threeeighths
-	* threequarters
-	* trademark
-	* two
-	* two.dnom
-	* two.numr
-	* two.tf
-	* u
-	* uacute
-	* ubreve
-	* ucircumflex
-	* udieresis
-	* ugrave
-	* uhungarumlaut
-	* umacron
-	* underscore
-	* uni004A0301
-	* uni006A0301
-	* uni00AD
-	* uni00B2
-	* uni00B5
-	* uni0122
-	* uni0123
-	* uni0136
-	* uni0137
-	* uni013B
-	* uni013C
-	* uni0145
-	* uni0146
-	* uni0156
-	* uni0157
-	* uni0218
-	* uni0219
-	* uni021A
-	* uni021B
-	* uni0237
-	* uni0400
-	* uni0401
-	* uni0402
-	* uni0403
-	* uni0404
-	* uni0405
-	* uni0406
-	* uni0407
-	* uni0408
-	* uni0409
-	* uni040A
-	* uni040B
-	* uni040C
-	* uni040D
-	* uni040E
-	* uni040F
-	* uni0410
-	* uni0411
-	* uni0412
-	* uni0413
-	* uni0414
-	* uni0415
-	* uni0416
-	* uni0417
-	* uni0418
-	* uni0419
-	* uni041A
-	* uni041B
-	* uni041C
-	* uni041D
-	* uni041E
-	* uni041F
-	* uni0420
-	* uni0421
-	* uni0422
-	* uni0423
-	* uni0424
-	* uni0425
-	* uni0426
-	* uni0427
-	* uni0428
-	* uni0429
-	* uni042A
-	* uni042B
-	* uni042C
-	* uni042D
-	* uni042E
-	* uni042F
-	* uni0430
-	* uni0431
-	* uni0432
-	* uni0433
-	* uni0434
-	* uni0435
-	* uni0436
-	* uni0437
-	* uni0438
-	* uni0439
-	* uni043A
-	* uni043B
-	* uni043C
-	* uni043D
-	* uni043E
-	* uni043F
-	* uni0440
-	* uni0441
-	* uni0442
-	* uni0443
-	* uni0444
-	* uni0445
-	* uni0446
-	* uni0447
-	* uni0448
-	* uni0449
-	* uni044A
-	* uni044B
-	* uni044C
-	* uni044D
-	* uni044E
-	* uni044F
-	* uni0450
-	* uni0451
-	* uni0452
-	* uni0453
-	* uni0454
-	* uni0455
-	* uni0456
-	* uni0457
-	* uni0458
-	* uni0459
-	* uni045A
-	* uni045B
-	* uni045C
-	* uni045D
-	* uni045E
-	* uni045F
-	* uni0462
-	* uni0463
-	* uni046A
-	* uni046B
-	* uni0472
-	* uni0473
-	* uni0474
-	* uni0475
-	* uni0490
-	* uni0491
-	* uni0492
-	* uni0493
-	* uni0494
-	* uni0495
-	* uni0496
-	* uni0497
-	* uni0498
-	* uni0499
-	* uni049A
-	* uni049B
-	* uni049C
-	* uni049D
-	* uni04A0
-	* uni04A1
-	* uni04A2
-	* uni04A3
-	* uni04A4
-	* uni04A5
-	* uni04AA
-	* uni04AB
-	* uni04B6
-	* uni04B7
-	* uni04B8
-	* uni04B9
-	* uni04BA
-	* uni04BB
-	* uni04C0
-	* uni04C1
-	* uni04C2
-	* uni04CB
-	* uni04CC
-	* uni04CF
-	* uni04D0
-	* uni04D1
-	* uni04D2
-	* uni04D3
-	* uni04D4
-	* uni04D5
-	* uni04D6
-	* uni04D7
-	* uni04D8
-	* uni04D9
-	* uni04DC
-	* uni04DD
-	* uni04DE
-	* uni04DF
-	* uni04E2
-	* uni04E3
-	* uni04E4
-	* uni04E5
-	* uni04E6
-	* uni04E7
-	* uni04E8
-	* uni04E9
-	* uni04EE
-	* uni04EF
-	* uni04F0
-	* uni04F1
-	* uni04F2
-	* uni04F3
-	* uni04F4
-	* uni04F5
-	* uni04F6
-	* uni04F7
-	* uni04F8
-	* uni04F9
-	* uni051A
-	* uni051B
-	* uni051C
-	* uni051D
-	* uni0524
-	* uni0525
-	* uni05D0
-	* uni05D1
-	* uni05D2
-	* uni05D3
-	* uni05D4
-	* uni05D5
-	* uni05D6
-	* uni05D7
-	* uni05D8
-	* uni05D9
-	* uni05DA
-	* uni05DB
-	* uni05DC
-	* uni05DD
-	* uni05DE
-	* uni05DF
-	* uni05E0
-	* uni05E1
-	* uni05E2
-	* uni05E3
-	* uni05E4
-	* uni05E5
-	* uni05E6
-	* uni05E7
-	* uni05E8
-	* uni05E9
-	* uni05EA
-	* uni05F2
-	* uni05F4
-	* uni1E9E
-	* uni2070
-	* uni2074
-	* uni2075
-	* uni2078
-	* uni2079
-	* uni2080
-	* uni2082
-	* uni2084
-	* uni2085
-	* uni2088
-	* uni2089
-	* uni20AA
-	* uni20AE
-	* uni20B4
-	* uni20B8
-	* uni20B9
-	* uni20BD
-	* uni2116
-	* uni2153
-	* uni2154
-	* uni2206
-	* uni2215
-	* uniFB2A
-	* uniFB2B
-	* uniFB2C
-	* uniFB2D
-	* uniFB2E
-	* uniFB2F
-	* uniFB30
-	* uniFB31
-	* uniFB32
-	* uniFB33
-	* uniFB34
-	* uniFB35
-	* uniFB36
-	* uniFB38
-	* uniFB39
-	* uniFB3A
-	* uniFB3B
-	* uniFB3C
-	* uniFB3E
-	* uniFB40
-	* uniFB41
-	* uniFB43
-	* uniFB44
-	* uniFB46
-	* uniFB47
-	* uniFB48
-	* uniFB49
-	* uniFB4A
-	* uniFB4B
-	* uogonek
-	* uring
-	* utilde
-	* v
-	* w
-	* wacute
-	* wcircumflex
-	* wdieresis
-	* wgrave
-	* x
-	* y
-	* yacute
-	* ycircumflex
-	* ydieresis
-	* yen
-	* ygrave
-	* z
-	* zacute
-	* zcaron
-	* zdotaccent
-	* zero
-	* zero.dnom
-	* zero.numr
-	* zero.tf
-	* zero.tf.zero and zero.zero
 </div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/kerning_for_non_ligated_sequences">com.google.fonts/check/kerning_for_non_ligated_sequences</a>)</summary><div>
 
 
@@ -1040,10 +368,10 @@ notequal
 
 The dot of soft dotted characters _should_ disappear in other cases, for example: i̦̒ j̦̒ į̆ į̇ į̈ į̊ į̋ į̒ į̦̒ į̧̒ į̨̒ į̵̀ į̵́ į̵̂ į̵̃ į̵̄ į̵̆ į̵̇ į̵̈ į̵̊
 
-Your font fully covers the following languages that require the soft-dotted feature: Dutch (Latn, 31,709,104 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Belarusian (Cyrl, 10,064,517 speakers), Lithuanian (Latn, 2,357,094 speakers). 
+Your font fully covers the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers), Dutch (Latn, 31,709,104 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Lithuanian (Latn, 2,357,094 speakers). 
 
-Your font does *not* cover the following languages that require the soft-dotted feature: Yala (Latn, 200,000 speakers), Sar (Latn, 500,000 speakers), Koonzime (Latn, 40,000 speakers), Gulay (Latn, 250,478 speakers), Ekpeye (Latn, 226,000 speakers), Zapotec (Latn, 490,000 speakers), Aghem (Latn, 38,843 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Nateni (Latn, 100,000 speakers), Nzakara (Latn, 50,000 speakers), Bafut (Latn, 158,146 speakers), Dii (Latn, 71,000 speakers), Kom (Latn, 360,685 speakers), Bete-Bendi (Latn, 100,000 speakers), Navajo (Latn, 166,319 speakers), Igbo (Latn, 27,823,640 speakers), Ejagham (Latn, 120,000 speakers), South Central Banda (Latn, 244,000 speakers), Fur (Latn, 1,230,163 speakers), Makaa (Latn, 221,000 speakers), Ebira (Latn, 2,200,000 speakers), Avokaya (Latn, 100,000 speakers), Mango (Latn, 77,000 speakers), Mfumte (Latn, 79,000 speakers), Lugbara (Latn, 2,200,000 speakers), Basaa (Latn, 332,940 speakers), Dan (Latn, 1,099,244 speakers), Ma’di (Latn, 584,000 speakers), Mundani (Latn, 34,000 speakers), Cicipu (Latn, 44,000 speakers), Southern Kisi (Latn, 360,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Ngbaka (Latn, 1,020,000 speakers). [code: soft-dotted]
-</div></details><br></div></details><details><summary><b>[13] Rubik-Italic[wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check license file has good copyright string. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_copyright">com.google.fonts/check/license/OFL_copyright</a>)</summary><div>
+Your font does *not* cover the following languages that require the soft-dotted feature: Koonzime (Latn, 40,000 speakers), Zapotec (Latn, 490,000 speakers), Igbo (Latn, 27,823,640 speakers), Nzakara (Latn, 50,000 speakers), Bafut (Latn, 158,146 speakers), Yala (Latn, 200,000 speakers), Mfumte (Latn, 79,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Ekpeye (Latn, 226,000 speakers), Mango (Latn, 77,000 speakers), Dii (Latn, 71,000 speakers), Cicipu (Latn, 44,000 speakers), South Central Banda (Latn, 244,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Bete-Bendi (Latn, 100,000 speakers), Sar (Latn, 500,000 speakers), Fur (Latn, 1,230,163 speakers), Dan (Latn, 1,099,244 speakers), Nateni (Latn, 100,000 speakers), Aghem (Latn, 38,843 speakers), Gulay (Latn, 250,478 speakers), Ejagham (Latn, 120,000 speakers), Makaa (Latn, 221,000 speakers), Kom (Latn, 360,685 speakers), Ma’di (Latn, 584,000 speakers), Avokaya (Latn, 100,000 speakers), Lugbara (Latn, 2,200,000 speakers), Ebira (Latn, 2,200,000 speakers), Mundani (Latn, 34,000 speakers), Ngbaka (Latn, 1,020,000 speakers), Southern Kisi (Latn, 360,000 speakers), Basaa (Latn, 332,940 speakers), Navajo (Latn, 166,319 speakers). [code: soft-dotted]
+</div></details><br></div></details><details><summary><b>[12] Rubik-Italic[wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Check license file has good copyright string. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/license/OFL_copyright">com.google.fonts/check/license/OFL_copyright</a>)</summary><div>
 
 
 * 🔥 **FAIL** First line in license file is:
@@ -1053,11 +381,6 @@ Your font does *not* cover the following languages that require the soft-dotted 
 which does not match the expected format, similar to:
 
 "Copyright 2022 The Familyname Project Authors (git url)" [code: bad-format]
-</div></details><details><summary>🔥 <b>FAIL:</b> Version number has increased since previous release on Google Fonts? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/version_bump">com.google.fonts/check/version_bump</a>)</summary><div>
-
-
-* 🔥 **FAIL** Version number 2.102 is less than on **Google Fonts** (2.300).
-* 🔥 **FAIL** Version number 2.102 is less than on google/fonts **GitHub repo** (2.300).
 </div></details><details><summary>⚠ <b>WARN:</b> Checking OS/2 achVendID. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/vendor_id">com.google.fonts/check/vendor_id</a>)</summary><div>
 
 
@@ -1072,14 +395,14 @@ which does not match the expected format, similar to:
     subset declarations to METADATA.pb, or by editing the glyphset
     definitions.
 
- * U+02C7 CARON: try adding one of: tifinagh, canadian-aboriginal, yi
- * U+02D8 BREVE: try adding one of: canadian-aboriginal, yi
- * U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi
- * U+02DB OGONEK: try adding one of: canadian-aboriginal, yi
+ * U+02C7 CARON: try adding one of: tifinagh, yi, canadian-aboriginal
+ * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
+ * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
+ * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
  * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, coptic, math, tifinagh
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, tifinagh, math, coptic
  * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
- * U+0307 COMBINING DOT ABOVE: try adding one of: math, tifinagh, canadian-aboriginal, syriac, coptic, malayalam, old-permic, tai-le
+ * U+0307 COMBINING DOT ABOVE: try adding one of: tifinagh, old-permic, coptic, syriac, tai-le, math, malayalam, canadian-aboriginal
  * U+030A COMBINING RING ABOVE: try adding syriac
  * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
  * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
@@ -1130,7 +453,7 @@ which does not match the expected format, similar to:
  * U+2260 NOT EQUAL TO: try adding math
  * U+2264 LESS-THAN OR EQUAL TO: try adding math
  * U+2265 GREATER-THAN OR EQUAL TO: try adding math
- * U+25CA LOZENGE: try adding one of: math, symbols
+ * U+25CA LOZENGE: try adding one of: symbols, math
  * U+FB01 LATIN SMALL LIGATURE FI: not included in any glyphset definition
  * U+FB02 LATIN SMALL LIGATURE FL: not included in any glyphset definition
 
@@ -1443,9 +766,9 @@ notequal
 
 The dot of soft dotted characters _should_ disappear in other cases, for example: i̦̒ j̦̒ į̆ į̇ į̈ į̊ į̋ į̒ į̦̒ į̧̒ į̨̒ į̵̀ į̵́ į̵̂ į̵̃ į̵̄ į̵̆ į̵̇ į̵̈ į̵̊
 
-Your font fully covers the following languages that require the soft-dotted feature: Dutch (Latn, 31,709,104 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Belarusian (Cyrl, 10,064,517 speakers), Lithuanian (Latn, 2,357,094 speakers). 
+Your font fully covers the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers), Dutch (Latn, 31,709,104 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Lithuanian (Latn, 2,357,094 speakers). 
 
-Your font does *not* cover the following languages that require the soft-dotted feature: Yala (Latn, 200,000 speakers), Sar (Latn, 500,000 speakers), Koonzime (Latn, 40,000 speakers), Gulay (Latn, 250,478 speakers), Ekpeye (Latn, 226,000 speakers), Zapotec (Latn, 490,000 speakers), Aghem (Latn, 38,843 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Nateni (Latn, 100,000 speakers), Nzakara (Latn, 50,000 speakers), Bafut (Latn, 158,146 speakers), Dii (Latn, 71,000 speakers), Kom (Latn, 360,685 speakers), Bete-Bendi (Latn, 100,000 speakers), Navajo (Latn, 166,319 speakers), Igbo (Latn, 27,823,640 speakers), Ejagham (Latn, 120,000 speakers), South Central Banda (Latn, 244,000 speakers), Fur (Latn, 1,230,163 speakers), Makaa (Latn, 221,000 speakers), Ebira (Latn, 2,200,000 speakers), Avokaya (Latn, 100,000 speakers), Mango (Latn, 77,000 speakers), Mfumte (Latn, 79,000 speakers), Lugbara (Latn, 2,200,000 speakers), Basaa (Latn, 332,940 speakers), Dan (Latn, 1,099,244 speakers), Ma’di (Latn, 584,000 speakers), Mundani (Latn, 34,000 speakers), Cicipu (Latn, 44,000 speakers), Southern Kisi (Latn, 360,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Ngbaka (Latn, 1,020,000 speakers). [code: soft-dotted]
+Your font does *not* cover the following languages that require the soft-dotted feature: Koonzime (Latn, 40,000 speakers), Zapotec (Latn, 490,000 speakers), Igbo (Latn, 27,823,640 speakers), Nzakara (Latn, 50,000 speakers), Bafut (Latn, 158,146 speakers), Yala (Latn, 200,000 speakers), Mfumte (Latn, 79,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Ekpeye (Latn, 226,000 speakers), Mango (Latn, 77,000 speakers), Dii (Latn, 71,000 speakers), Cicipu (Latn, 44,000 speakers), South Central Banda (Latn, 244,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Bete-Bendi (Latn, 100,000 speakers), Sar (Latn, 500,000 speakers), Fur (Latn, 1,230,163 speakers), Dan (Latn, 1,099,244 speakers), Nateni (Latn, 100,000 speakers), Aghem (Latn, 38,843 speakers), Gulay (Latn, 250,478 speakers), Ejagham (Latn, 120,000 speakers), Makaa (Latn, 221,000 speakers), Kom (Latn, 360,685 speakers), Ma’di (Latn, 584,000 speakers), Avokaya (Latn, 100,000 speakers), Lugbara (Latn, 2,200,000 speakers), Ebira (Latn, 2,200,000 speakers), Mundani (Latn, 34,000 speakers), Ngbaka (Latn, 1,020,000 speakers), Southern Kisi (Latn, 360,000 speakers), Basaa (Latn, 332,940 speakers), Navajo (Latn, 166,319 speakers). [code: soft-dotted]
 </div></details><br></div></details><details><summary><b>[1] Family checks</b></summary><div><details><summary>⚠ <b>WARN:</b> Make sure all font files have the same version value. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/head.html#com.google.fonts/check/family/equal_font_versions">com.google.fonts/check/family/equal_font_versions</a>)</summary><div>
 
 
@@ -1460,8 +783,8 @@ These were the version values found:
 
 | 💔 ERROR | ☠ FATAL | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| 0 | 0 | 4 | 24 | 199 | 17 | 257 | 0 |
-| 0% | 0% | 1% | 5% | 40% | 3% | 51% | 0% |
+| 0 | 0 | 2 | 23 | 205 | 17 | 254 | 0 |
+| 0% | 0% | 0% | 5% | 41% | 3% | 51% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
