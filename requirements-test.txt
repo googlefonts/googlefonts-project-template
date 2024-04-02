@@ -1,2 +1,2 @@
 fontbakery[googlefonts]>=0.11.2
-gftools[qa]>=0.9.52
+gftools[qa]>=0.9.53
