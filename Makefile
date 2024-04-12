@@ -59,11 +59,12 @@ update: venv venv-test
 	venv/bin/pip install --upgrade pip-tools
 	# See https://pip-tools.readthedocs.io/en/latest/#a-note-on-resolvers for
 	# the `--resolver` flag below.
-	venv/bin/pip-compile --upgrade --resolver=backtracking requirements.in
+	venv/bin/pip-compile --upgrade --verbose --resolver=backtracking requirements.in
 	venv/bin/pip-sync requirements.txt
 
 	venv-test/bin/pip install --upgrade pip-tools
-	# See https://pip-tools.readthedocs.io/en/latest/#a-note-on-resolvers for
-	# the `--resolver` flag below.
-	venv-test/bin/pip-compile --upgrade --resolver=backtracking requirements-test.in
+	venv-test/bin/pip-compile --upgrade --verbose --resolver=backtracking requirements-test.in
 	venv-test/bin/pip-sync requirements-test.txt
+
+	git commit -m "Update requirements" requirements.txt requirements-test.txt
+	git push
