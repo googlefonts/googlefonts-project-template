@@ -10,7 +10,7 @@
 \
 Unlike many open source distributors, Google Fonts is **curated**. Fonts shipped to the platform have to match the [Google Fonts Specifications](https://github.com/googlefonts/gf-docs/tree/main/Spec). Please read them carefully.\
 \
-*(The sample font provided in this template is [Rubik](https://github.com/googlefonts/rubik/) by Philipp Hubert, Sebastian Fischer, and contributors.)*
+*(The sample font provided in this template is [Radio Canada](https://github.com/googlefonts/radiocanadadisplay/) by Charles Daoud, Etienne Aubert Bonn, Alexandre Saumier Demers and contributors.)*
 
 3. Then reference the sources in the file `sources/config.yaml`, as well as making any other changes you would like to make based on the instructions in the [Google Fonts Builder documentation](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/builder/__init__.py).
 
