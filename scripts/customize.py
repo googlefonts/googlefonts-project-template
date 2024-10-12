@@ -14,7 +14,7 @@ import requests
 
 BASE_OWNER = "googlefonts"
 BASE_REPONAME = "googlefonts-project-template"
-DUMMY_URL = "https://yourname.github.io/your-font-repository-name"
+DUMMY_URL = "https://github.com/martin-code1/CKP-Text.git"
 LATEST_OFL = "https://raw.githubusercontent.com/googlefonts/googlefonts-project-template/main/OFL.txt"
 
 
