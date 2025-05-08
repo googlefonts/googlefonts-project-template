@@ -12,6 +12,18 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: "3.10"
+    - name: Download fontspector
+      uses: dsaltares/fetch-gh-release-asset@master
+      with:
+        repo: fonttools/fontspector
+        file: 'fontspector-.*linux-gnu.tar.gz'
+        regex: true
+    - name: Install fontspector
+      run: |
+        mkdir -p ~/.local/bin
+        tar -xzf fontspector-*.tar.gz -C ~/.local/bin
+        chmod +x ~/.local/bin/fontspector
+        echo 'export PATH=$PATH:~/.local/bin' >> $GITHUB_ENV
     - name: Install sys tools/deps
       run: |
         sudo apt-get update
