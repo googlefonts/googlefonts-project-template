@@ -21,7 +21,8 @@ jobs:
     - name: Install fontspector
       run: |
         mkdir -p ~/.local/bin
-        tar -vxzf fontspector-*.tar.gz -C ~/.local/bin
+        tar -xzf fontspector-*.tar.gz
+        mv fontspector-*/fontspector ~/.local/bin
         chmod +x ~/.local/bin/fontspector
         echo 'export PATH=$PATH:~/.local/bin' >> $GITHUB_ENV
     - name: Install sys tools/deps
