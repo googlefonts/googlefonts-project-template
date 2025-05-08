@@ -57,7 +57,7 @@ jobs:
 
     - name: Build font
       run: make build
-    - name: Check with fontbakery
+    - name: Check with fontspector
       run: make test
       continue-on-error: true
     - name: proof
