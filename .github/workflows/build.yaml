@@ -1,6 +1,6 @@
 name: Build font and specimen
 
-on: push
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
@@ -72,6 +72,7 @@ jobs:
 
   deploy:
     name: Deploy results to GitHub Pages
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -93,9 +94,9 @@ jobs:
 
   release:
     name: Release bundle
+    if: contains(github.ref, 'refs/tags/')
     needs: build
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'refs/tags/')
     env:
       ZIP_NAME: ${{ needs.build.outputs.zip_name }}
       GH_TOKEN: ${{ github.token }}
