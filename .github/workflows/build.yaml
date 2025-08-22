@@ -57,7 +57,7 @@ jobs:
       run: cp scripts/index.html out/index.html
     - name: Collect deployment assets
       if: ${{ github.ref == 'refs/heads/main' }}
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         path: ./out
     - name: Archive artifacts
