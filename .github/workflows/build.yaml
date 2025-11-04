@@ -1,6 +1,7 @@
 name: Build font and specimen
 
 on: [push, pull_request, workflow_dispatch]
+permissions: write-all
 
 jobs:
   build:
