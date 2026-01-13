@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - master  # for backwards compatibility; use your default branch if different
     tags:
       - '*'
 
@@ -65,7 +66,7 @@ jobs:
     - name: Set up test result site
       run: cp scripts/index.html out/index.html
     - name: Collect deployment assets
-      if: ${{ github.ref == 'refs/heads/main' }}
+      if: ${{ github.ref_name == github.event.repository.default_branch }}
       uses: actions/upload-pages-artifact@v4
       with:
         path: ./out
@@ -81,7 +82,7 @@ jobs:
 
   deploy:
     name: Deploy results to GitHub Pages
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref_name == github.event.repository.default_branch }}
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -103,7 +104,7 @@ jobs:
 
   release:
     name: Release bundle
-    if: contains(github.ref, 'refs/tags/')
+    if: ${{ github.ref_type == 'tag' }}
     needs: build
     runs-on: ubuntu-latest
     env:
