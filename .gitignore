@@ -9,6 +9,7 @@ package-lock.json
 package.json
 master_ufo
 instance_ufos
+subset-files
 .ninja_log
 build.ninja
 
