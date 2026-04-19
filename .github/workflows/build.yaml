@@ -68,7 +68,7 @@ jobs:
       run: cp scripts/index.html out/index.html
     - name: Collect deployment assets
       if: ${{ github.ref_name == github.event.repository.default_branch }}
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v5
       with:
         path: ./out
     - name: Archive artifacts
