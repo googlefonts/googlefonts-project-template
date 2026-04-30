@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-python@v6
       id: python
       with:
-        python-version: "3.11"
+        python-version: "3.13.7"
     - name: Setup fontspector
       uses: fonttools/setup-fontspector@main
       env:
