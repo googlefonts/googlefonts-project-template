@@ -17,8 +17,7 @@ name = Uppercase;
 customParameters = (
 {
 name = fsType;
-value = (
-);
+value = ();
 },
 {
 name = "Use Typo Metrics";
@@ -95,13 +94,7 @@ lookup locl_latn_2 {
 tag = locl;
 },
 {
-code = "sub f f i by f_f_i;
-sub f f ij by f_f_ij;
-sub f f l by f_f_l;
-sub f f by f_f;
-sub f i by f_i;
-sub f ij by f_ij;
-sub f l by f_l;";
+code = "";
 tag = liga;
 },
 {
@@ -230,9 +223,7 @@ tag = dlig;
 );
 fontMaster = (
 {
-axesValues = (
-400
-);
+axesValues = (400);
 customParameters = (
 {
 name = typoAscender;
@@ -290,26 +281,13 @@ pos = -175;
 }
 );
 name = Regular;
-stemValues = (
-85,
-85,
-85,
-81,
-81,
-81,
-100,
-105,
-87,
-96
-);
+stemValues = (85,85,85,81,81,81,100,105,87,96);
 userData = {
 layerinfo.color = "1,0.75,0,0.7";
 };
 },
 {
-axesValues = (
-700
-);
+axesValues = (700);
 customParameters = (
 {
 name = typoAscender;
@@ -368,18 +346,7 @@ pos = -175;
 }
 );
 name = Bold;
-stemValues = (
-139,
-149,
-155,
-123,
-135,
-145,
-0,
-0,
-0,
-0
-);
+stemValues = (139,149,155,123,135,145,0,0,0,0);
 userData = {
 layerinfo.color = "1,0.75,0,0.7";
 };
@@ -50422,7 +50389,7 @@ nodes = (
 }
 );
 userData = {
-ufoStretch.beamYPositionForStretchedGlyph = 114.20507;
+ufoStretch.beamYPositionForStretchedGlyph = 114.2051;
 };
 width = 176;
 },
@@ -71869,43 +71836,21 @@ width = 500;
 );
 instances = (
 {
-axesValues = (
-400
-);
-instanceInterpolations = {
-"0EB46722-B91C-41F5-AE00-C58F8D8E3AB4" = 1;
-};
+axesValues = (400);
 name = Regular;
 },
 {
-axesValues = (
-500
-);
-instanceInterpolations = {
-"0EB46722-B91C-41F5-AE00-C58F8D8E3AB4" = 0.66667;
-m001 = 0.33333;
-};
+axesValues = (500);
 name = Medium;
 weightClass = 500;
 },
 {
-axesValues = (
-600
-);
-instanceInterpolations = {
-"0EB46722-B91C-41F5-AE00-C58F8D8E3AB4" = 0.33333;
-m001 = 0.66667;
-};
+axesValues = (600);
 name = SemiBold;
 weightClass = 600;
 },
 {
-axesValues = (
-700
-);
-instanceInterpolations = {
-m001 = 1;
-};
+axesValues = (700);
 isBold = 1;
 name = Bold;
 weightClass = 700;
@@ -73178,13 +73123,8 @@ value = "Copyright 2022 The Radio Canada Display Project Authors (https://github
 );
 },
 {
-key = designers;
-values = (
-{
-language = dflt;
+key = designer;
 value = "Étienne Aubert Bonn";
-}
-);
 },
 {
 key = designerURL;
@@ -73204,13 +73144,8 @@ key = licenseURL;
 value = "https://openfontlicense.org";
 },
 {
-key = manufacturers;
-values = (
-{
-language = dflt;
+key = manufacturer;
 value = "Coppers and Brasses";
-}
-);
 },
 {
 key = manufacturerURL;
@@ -73278,480 +73213,87 @@ com.typemytype.robofont.generateFeaturesWithFontTools = 0;
 com.typemytype.robofont.italicSlantOffset = 0;
 com.typemytype.robofont.shouldAddPointsInSplineConversion = 1;
 com.typesupply.metricsMachine4.groupColors = {
-public.kern1.A = (
-1,
-0,
-0,
-0.25
-);
-public.kern1.B = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern1.C = (
-1,
-1,
-0,
-0.25
-);
-public.kern1.D = (
-0,
-1,
-0,
-0.25
-);
-public.kern1.E = (
-0,
-1,
-1,
-0.25
-);
-public.kern1.F = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern1.G = (
-0,
-0,
-1,
-0.25
-);
-public.kern1.H = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern1.I = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern1.J = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern1.K = (
-1,
-0,
-0,
-0.25
-);
-public.kern1.L = (
-1,
-0,
-0,
-0.25
-);
-public.kern1.M = (
-0,
-1,
-1,
-0.25
-);
-public.kern1.N = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern1.O = (
-0,
-1,
-0,
-0.25
-);
-public.kern1.P = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern1.Q = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern1.R = (
-1,
-1,
-0,
-0.25
-);
-public.kern1.S = (
-0,
-1,
-0,
-0.25
-);
-public.kern1.T = (
-0,
-1,
-1,
-0.25
-);
-public.kern1.U = (
-1,
-0,
-1,
-0.25
-);
-public.kern1.V = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern1.W = (
-0,
-0,
-1,
-0.25
-);
-public.kern1.X = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern1.Y = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern1.Z = (
-1,
-0,
-1,
-0.25
-);
-public.kern1.a = (
-0,
-0,
-1,
-0.25
-);
-public.kern1.b = (
-1,
-0,
-1,
-0.25
-);
-public.kern1.c = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern1.f = (
-0,
-1,
-0,
-0.25
-);
-public.kern1.i = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern1.l = (
-1,
-1,
-0,
-0.25
-);
-public.kern1.n = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern1.o = (
-1,
-0,
-0,
-0.25
-);
-public.kern1.q = (
-0,
-1,
-1,
-0.25
-);
-public.kern1.r = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern1.s = (
-1,
-0,
-1,
-0.25
-);
-public.kern1.t = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern1.v = (
-1,
-0,
-0,
-0.25
-);
-public.kern1.w = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern1.x = (
-0,
-0,
-1,
-0.25
-);
-public.kern1.z = (
-1,
-1,
-0,
-0.25
-);
-public.kern2.A = (
-1,
-0,
-0,
-0.25
-);
-public.kern2.B = (
-0,
-0,
-1,
-0.25
-);
-public.kern2.C = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern2.D = (
-0,
-1,
-0,
-0.25
-);
-public.kern2.E = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern2.F = (
-0,
-1,
-1,
-0.25
-);
-public.kern2.G = (
-1,
-0,
-1,
-0.25
-);
-public.kern2.H = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern2.I = (
-1,
-0,
-0,
-0.25
-);
-public.kern2.J = (
-0,
-1,
-0,
-0.25
-);
-public.kern2.K = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern2.L = (
-1,
-1,
-0,
-0.25
-);
-public.kern2.M = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern2.O = (
-1,
-1,
-0,
-0.25
-);
-public.kern2.S = (
-0,
-1,
-1,
-0.25
-);
-public.kern2.T = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern2.U = (
-0,
-0,
-1,
-0.25
-);
-public.kern2.V = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern2.W = (
-1,
-0,
-1,
-0.25
-);
-public.kern2.X = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern2.Y = (
-1,
-0,
-0,
-0.25
-);
-public.kern2.Z = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern2.a = (
-1,
-1,
-0,
-0.25
-);
-public.kern2.f = (
-0,
-0.5,
-1,
-0.25
-);
-public.kern2.j = (
-0.5,
-0,
-1,
-0.25
-);
-public.kern2.l = (
-0,
-1,
-0,
-0.25
-);
-public.kern2.n = (
-0,
-0,
-1,
-0.25
-);
-public.kern2.o = (
-0,
-1,
-1,
-0.25
-);
-public.kern2.p = (
-1,
-0,
-1,
-0.25
-);
-public.kern2.s = (
-1,
-0,
-0.5,
-0.25
-);
-public.kern2.t = (
-1,
-0,
-0,
-0.25
-);
-public.kern2.u = (
-1,
-0.5,
-0,
-0.25
-);
-public.kern2.v = (
-1,
-1,
-0,
-0.25
-);
-public.kern2.w = (
-0,
-1,
-0,
-0.25
-);
-public.kern2.x = (
-0,
-1,
-1,
-0.25
-);
-public.kern2.z = (
-0,
-0.5,
-1,
-0.25
-);
+public.kern1.A = (1,0,0,0.25);
+public.kern1.B = (1,0.5,0,0.25);
+public.kern1.C = (1,1,0,0.25);
+public.kern1.D = (0,1,0,0.25);
+public.kern1.E = (0,1,1,0.25);
+public.kern1.F = (0,0.5,1,0.25);
+public.kern1.G = (0,0,1,0.25);
+public.kern1.H = (0.5,0,1,0.25);
+public.kern1.I = (1,0,0.5,0.25);
+public.kern1.J = (1,0.5,0,0.25);
+public.kern1.K = (1,0,0,0.25);
+public.kern1.L = (1,0,0,0.25);
+public.kern1.M = (0,1,1,0.25);
+public.kern1.N = (0,0.5,1,0.25);
+public.kern1.O = (0,1,0,0.25);
+public.kern1.P = (1,0.5,0,0.25);
+public.kern1.Q = (0.5,0,1,0.25);
+public.kern1.R = (1,1,0,0.25);
+public.kern1.S = (0,1,0,0.25);
+public.kern1.T = (0,1,1,0.25);
+public.kern1.U = (1,0,1,0.25);
+public.kern1.V = (0,0.5,1,0.25);
+public.kern1.W = (0,0,1,0.25);
+public.kern1.X = (1,0,0.5,0.25);
+public.kern1.Y = (0.5,0,1,0.25);
+public.kern1.Z = (1,0,1,0.25);
+public.kern1.a = (0,0,1,0.25);
+public.kern1.b = (1,0,1,0.25);
+public.kern1.c = (1,0.5,0,0.25);
+public.kern1.f = (0,1,0,0.25);
+public.kern1.i = (0,0.5,1,0.25);
+public.kern1.l = (1,1,0,0.25);
+public.kern1.n = (1,0,0.5,0.25);
+public.kern1.o = (1,0,0,0.25);
+public.kern1.q = (0,1,1,0.25);
+public.kern1.r = (0.5,0,1,0.25);
+public.kern1.s = (1,0,1,0.25);
+public.kern1.t = (1,0,0.5,0.25);
+public.kern1.v = (1,0,0,0.25);
+public.kern1.w = (1,0.5,0,0.25);
+public.kern1.x = (0,0,1,0.25);
+public.kern1.z = (1,1,0,0.25);
+public.kern2.A = (1,0,0,0.25);
+public.kern2.B = (0,0,1,0.25);
+public.kern2.C = (0.5,0,1,0.25);
+public.kern2.D = (0,1,0,0.25);
+public.kern2.E = (0,0.5,1,0.25);
+public.kern2.F = (0,1,1,0.25);
+public.kern2.G = (1,0,1,0.25);
+public.kern2.H = (1,0.5,0,0.25);
+public.kern2.I = (1,0,0,0.25);
+public.kern2.J = (0,1,0,0.25);
+public.kern2.K = (1,0.5,0,0.25);
+public.kern2.L = (1,1,0,0.25);
+public.kern2.M = (1,0,0.5,0.25);
+public.kern2.O = (1,1,0,0.25);
+public.kern2.S = (0,1,1,0.25);
+public.kern2.T = (0,0.5,1,0.25);
+public.kern2.U = (0,0,1,0.25);
+public.kern2.V = (0.5,0,1,0.25);
+public.kern2.W = (1,0,1,0.25);
+public.kern2.X = (1,0,0.5,0.25);
+public.kern2.Y = (1,0,0,0.25);
+public.kern2.Z = (1,0.5,0,0.25);
+public.kern2.a = (1,1,0,0.25);
+public.kern2.f = (0,0.5,1,0.25);
+public.kern2.j = (0.5,0,1,0.25);
+public.kern2.l = (0,1,0,0.25);
+public.kern2.n = (0,0,1,0.25);
+public.kern2.o = (0,1,1,0.25);
+public.kern2.p = (1,0,1,0.25);
+public.kern2.s = (1,0,0.5,0.25);
+public.kern2.t = (1,0,0,0.25);
+public.kern2.u = (1,0.5,0,0.25);
+public.kern2.v = (1,1,0,0.25);
+public.kern2.w = (0,1,0,0.25);
+public.kern2.x = (0,1,1,0.25);
+public.kern2.z = (0,0.5,1,0.25);
 };
 designspace.location = (
-(
-newAxis0,
-900
-)
+(newAxis0, 900)
 );
 };
 UFOFormat = 3;
