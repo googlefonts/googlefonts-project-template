@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - main
-      - master  # for backwards compatibility; use your default branch if different
+      - master # for backwards compatibility; use your default branch if different
     tags:
-      - '*'
+      - "*"
 
 permissions: write-all
 
@@ -17,67 +17,71 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v6
-      id: python
-      with:
-        python-version: "3.11"
-    - name: Setup fontspector
-      uses: fonttools/setup-fontspector@main
-      env:
+      - uses: actions/checkout@v6
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        id: python
+        with:
+          python-version: "3.11"
+      - uses: cargo-bins/cargo-binstall@main
+        name: Install cargo binstall
+      - name: Install Rust font tools
+        run: |
+          cargo binstall --no-confirm fontspector
+          cargo binstall --no-confirm diffenator3
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Install toolset
-      run: |
-        sudo apt-get update
-        sudo apt-get install ttfautohint libcairo2-dev python3-cairo-dev pkg-config python3-dev
-        sudo snap install yq
-    - uses: actions/cache@v5
-      with:
-        path: ./venv/
-        key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('**/requirements*.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-
-    - name: Set artifact file name
-      id: zip-name
-      shell: bash
-      # Set the archive name to repo name + "-fonts" e.g "radiocanadafonts-fonts.zip"
-      run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
+      - name: Install toolset
+        run: |
+          sudo apt-get update
+          sudo apt-get install ttfautohint libcairo2-dev python3-cairo-dev pkg-config python3-dev
+          sudo snap install yq
+      - uses: actions/cache@v5
+        with:
+          path: ./venv/
+          key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-
+      - name: Set artifact file name
+        id: zip-name
+        shell: bash
+        # Set the archive name to repo name + "-fonts" e.g "radiocanadafonts-fonts.zip"
+        run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
 
-    # If a new release is cut, use the release tag to auto-bump the source files
-    # - name: Bump release
-    #   if: github.event_name == 'release'
-    #   run: |
-    #     . venv/bin/activate
-    #     SRCS=$(yq e ".sources[]" sources/config.yaml)
-    #     TAG_NAME=${GITHUB_REF/refs\/tags\//}
-    #     echo "Bumping $SRCS to $TAG_NAME"
-    #     for src in $SRCS
-    #     do
-    #       bumpfontversion sources/$src --new-version $TAG_NAME;
-    #     done
+      # If a new release is cut, use the release tag to auto-bump the source files
+      # - name: Bump release
+      #   if: github.event_name == 'release'
+      #   run: |
+      #     . venv/bin/activate
+      #     SRCS=$(yq e ".sources[]" sources/config.yaml)
+      #     TAG_NAME=${GITHUB_REF/refs\/tags\//}
+      #     echo "Bumping $SRCS to $TAG_NAME"
+      #     for src in $SRCS
+      #     do
+      #       bumpfontversion sources/$src --new-version $TAG_NAME;
+      #     done
 
-    - name: Build font
-      run: make build
-    - name: Check with fontspector
-      run: make test
-      continue-on-error: true
-    - name: Generate proofs
-      run: make proof
-    - name: Set up test result site
-      run: cp scripts/index.html out/index.html
-    - name: Collect deployment assets
-      if: ${{ github.ref_name == github.event.repository.default_branch }}
-      uses: actions/upload-pages-artifact@v5
-      with:
-        path: ./out
-    - name: Archive artifacts
-      uses: actions/upload-artifact@v6
-      with:
-        name: ${{ env.ZIP_NAME }}
-        path: |
-          fonts
-          out
+      - name: Build font
+        run: make build
+      - name: Check with fontspector
+        run: make test
+        continue-on-error: true
+      - name: Generate proofs
+        run: make proof
+      - name: Set up test result site
+        run: cp scripts/index.html out/index.html
+      - name: Collect deployment assets
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./out
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ env.ZIP_NAME }}
+          path: |
+            fonts
+            out
     outputs:
       zip_name: ${{ env.ZIP_NAME }}
 
