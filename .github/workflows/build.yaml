@@ -23,14 +23,15 @@ jobs:
         id: python
         with:
           python-version: "3.11"
+      - name: Setup fontspector
+        uses: fonttools/setup-fontspector@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: cargo-bins/cargo-binstall@main
         name: Install cargo binstall
       - name: Install Rust font tools
         run: |
-          cargo binstall --no-confirm fontspector
           cargo binstall --no-confirm diffenator3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install toolset
         run: |
           sudo apt-get update
