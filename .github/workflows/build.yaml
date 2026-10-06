@@ -33,7 +33,7 @@ jobs:
       - name: Install Rust font tools
         run: |
           cargo binstall --no-confirm diffenator3
-          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha
+          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha --pkg-url "{ repo }/releases/download/{name}-v{ version }/{ name }-{ target }{ archive-suffix }"
       - name: Install toolset
         run: |
           sudo apt-get update
