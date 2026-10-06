@@ -32,11 +32,11 @@ jobs:
       - name: Install Rust font tools
         run: |
           cargo binstall --no-confirm diffenator3
+          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha
       - name: Install toolset
         run: |
           sudo apt-get update
-          sudo apt-get install ttfautohint libcairo2-dev python3-cairo-dev pkg-config python3-dev
-          sudo snap install yq
+          sudo apt-get install ttfautohint pkg-config python3-dev
       - uses: actions/cache@v5
         with:
           path: ./venv/
@@ -48,19 +48,6 @@ jobs:
         shell: bash
         # Set the archive name to repo name + "-fonts" e.g "radiocanadafonts-fonts.zip"
         run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
-
-      # If a new release is cut, use the release tag to auto-bump the source files
-      # - name: Bump release
-      #   if: github.event_name == 'release'
-      #   run: |
-      #     . venv/bin/activate
-      #     SRCS=$(yq e ".sources[]" sources/config.yaml)
-      #     TAG_NAME=${GITHUB_REF/refs\/tags\//}
-      #     echo "Bumping $SRCS to $TAG_NAME"
-      #     for src in $SRCS
-      #     do
-      #       bumpfontversion sources/$src --new-version $TAG_NAME;
-      #     done
 
       - name: Build font
         run: make build
