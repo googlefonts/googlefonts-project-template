@@ -34,16 +34,6 @@ jobs:
         run: |
           cargo binstall --no-confirm diffenator3
           cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha --pkg-url "{ repo }/releases/download/{name}-v{ version }/{ name }-{ target }{ archive-suffix }"
-      - name: Install toolset
-        run: |
-          sudo apt-get update
-          sudo apt-get install ttfautohint pkg-config python3-dev
-      - uses: actions/cache@v5
-        with:
-          path: ./venv/
-          key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-
       - name: Set artifact file name
         id: zip-name
         shell: bash
