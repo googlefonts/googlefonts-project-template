@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - master # for backwards compatibility; use your default branch if different
+      - nextgen # While testing
     tags:
       - "*"
 
