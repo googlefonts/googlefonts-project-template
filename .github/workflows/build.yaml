@@ -33,7 +33,7 @@ jobs:
       - name: Install Rust font tools
         run: |
           cargo binstall --no-confirm diffenator3
-          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha --pkg-url "{ repo }/releases/download/{name}-v{ version }/{ name }-{ target }{ archive-suffix }"
+          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha.2 --pkg-url "{ repo }/releases/download/{name}-v{ version }/{ name }-{ target }{ archive-suffix }"
       - name: Set artifact file name
         id: zip-name
         shell: bash
