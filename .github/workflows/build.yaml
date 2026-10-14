@@ -7,6 +7,7 @@ on:
     branches:
       - main
       - master # for backwards compatibility; use your default branch if different
+      - nextgen # While testing
     tags:
       - "*"
 
@@ -32,35 +33,12 @@ jobs:
       - name: Install Rust font tools
         run: |
           cargo binstall --no-confirm diffenator3
-      - name: Install toolset
-        run: |
-          sudo apt-get update
-          sudo apt-get install ttfautohint libcairo2-dev python3-cairo-dev pkg-config python3-dev
-          sudo snap install yq
-      - uses: actions/cache@v5
-        with:
-          path: ./venv/
-          key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-
+          cargo binstall --no-confirm gftools-builder --version 3.0.0-alpha.2 --pkg-url "{ repo }/releases/download/{name}-v{ version }/{ name }-{ target }{ archive-suffix }"
       - name: Set artifact file name
         id: zip-name
         shell: bash
         # Set the archive name to repo name + "-fonts" e.g "radiocanadafonts-fonts.zip"
         run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
-
-      # If a new release is cut, use the release tag to auto-bump the source files
-      # - name: Bump release
-      #   if: github.event_name == 'release'
-      #   run: |
-      #     . venv/bin/activate
-      #     SRCS=$(yq e ".sources[]" sources/config.yaml)
-      #     TAG_NAME=${GITHUB_REF/refs\/tags\//}
-      #     echo "Bumping $SRCS to $TAG_NAME"
-      #     for src in $SRCS
-      #     do
-      #       bumpfontversion sources/$src --new-version $TAG_NAME;
-      #     done
 
       - name: Build font
         run: make build
