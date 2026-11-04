@@ -10,24 +10,28 @@ on:
     tags:
       - "*"
 
-permissions: write-all
+permissions: {}
 
 jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # check out the repository
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - name: Set up Python 3.11
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         id: python
         with:
           python-version: "3.11"
       - name: Setup fontspector
-        uses: fonttools/setup-fontspector@main
+        uses: fonttools/setup-fontspector@d53404291dc78a5a41cf76ea48e1d13a731fb812 # main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: cargo-bins/cargo-binstall@main
+      - uses: cargo-bins/cargo-binstall@90e4ee1101c5c9818ad29c4904d3cec4122bac0e # main
         name: Install cargo binstall
       - name: Install Rust font tools
         run: |
@@ -37,17 +41,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install ttfautohint libcairo2-dev python3-cairo-dev pkg-config python3-dev
           sudo snap install yq
-      - uses: actions/cache@v5
-        with:
-          path: ./venv/
-          key: ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-venv${{ steps.python.outputs.python-version }}-
       - name: Set artifact file name
         id: zip-name
         shell: bash
         # Set the archive name to repo name + "-fonts" e.g "radiocanadafonts-fonts.zip"
-        run: echo "ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-fonts" >> $GITHUB_ENV
+        run: echo "ZIP_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F '/' '{print $2}')-fonts" >> "$GITHUB_ENV"
 
       # If a new release is cut, use the release tag to auto-bump the source files
       # - name: Bump release
@@ -73,11 +71,11 @@ jobs:
         run: cp scripts/index.html out/index.html
       - name: Collect deployment assets
         if: ${{ github.ref_name == github.event.repository.default_branch }}
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: ./out
       - name: Archive artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: ${{ env.ZIP_NAME }}
           path: |
@@ -92,15 +90,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write
-      id-token: write
+      pages: write # publish the test results site
+      id-token: write # deploy-pages authenticates with an OIDC token
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
   # There are two ways a release can be created: either by pushing a tag, or by
   # creating a release from the GitHub UI. Pushing a tag does not automatically
@@ -113,37 +111,41 @@ jobs:
     if: ${{ github.ref_type == 'tag' }}
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the release and upload its bundle
     env:
       ZIP_NAME: ${{ needs.build.outputs.zip_name }}
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - name: Use font artifacts from CI
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
           name: ${{ env.ZIP_NAME }}
           path: ${{ env.ZIP_NAME }}
       - name: Copy ARTICLE.en_us.html to release directory
-        run: cp documentation/ARTICLE.en_us.html ${{ env.ZIP_NAME }}/ARTICLE.en_us.html
+        run: cp documentation/ARTICLE.en_us.html "$ZIP_NAME/ARTICLE.en_us.html"
         continue-on-error: true
       - name: Copy OFL.txt to release directory
-        run: cp OFL.txt ${{ env.ZIP_NAME }}/OFL.txt
+        run: cp OFL.txt "$ZIP_NAME/OFL.txt"
       - name: Remove proof/test outputs from release
-        run: rm -rf ${{ env.ZIP_NAME }}/out
+        run: rm -rf "$ZIP_NAME/out"
       - name: Set release file name
         shell: bash
-        run: echo "RELEASE_ZIP_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')-${{github.ref_name}}" >> $GITHUB_ENV
+        run: echo "RELEASE_ZIP_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F '/' '{print $2}')-$GITHUB_REF_NAME" >> "$GITHUB_ENV"
       - name: Create release bundle
-        run: mv ${{ env.ZIP_NAME }} ${{ env.RELEASE_ZIP_NAME }}; zip -r ${{ env.RELEASE_ZIP_NAME }}.zip ${{ env.RELEASE_ZIP_NAME }}
+        run: mv "$ZIP_NAME" "$RELEASE_ZIP_NAME"; zip -r "$RELEASE_ZIP_NAME.zip" "$RELEASE_ZIP_NAME"
       - name: Check for release
         id: create_release
         run: |
-          if ! gh release view ${{ github.ref_name }}; then
-          git show -s --format=%B ${{ github.ref_name }} | tail -n +4 | gh release create ${{ github.ref_name }} -t ${{ github.ref_name }} -F -
+          if ! gh release view "$GITHUB_REF_NAME"; then
+          git show -s --format=%B "$GITHUB_REF_NAME" | tail -n +4 | gh release create "$GITHUB_REF_NAME" -t "$GITHUB_REF_NAME" -F -
           fi
       - name: Populate release
         run: |
-          gh release upload ${{ github.ref_name }} ${{ env.RELEASE_ZIP_NAME }}.zip --clobber
+          gh release upload "$GITHUB_REF_NAME" "$RELEASE_ZIP_NAME.zip" --clobber
       - name: Set release live
         run: |
-          gh release edit ${{ github.ref_name }} --draft=false
+          gh release edit "$GITHUB_REF_NAME" --draft=false
